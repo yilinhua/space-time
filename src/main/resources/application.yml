@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    dirver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/userinfo?useSSL=false
+    username: root
+    password: lizhenhui
+  mvc:
+    view:
+      prefix: /jsp/
+      suffix: .jsp

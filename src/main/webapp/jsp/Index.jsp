@@ -114,17 +114,17 @@
 					<a class="one">合同管理</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/find-form.html">合同登记</a></li>
+							href="hetong/dengji.jsp">合同登记</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/find-alert.html">查询</a></li>
+							href="hetong/selectAll.jsp">查询</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/find-order.html">审核</a></li>
+							href="hetong/shenhe.jsp">审核</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/find-1.html">文档管理</a></li>
+							href="hetong/wendang.jsp">文档管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/find-1.html">统计报表</a></li>
+							href="hetong/tongji.jsp">统计报表</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/find-1.html">执行情况</a></li>
+							href="hetong/qingk.jsp">执行情况</a></li>
 					</ul>
 				</div>
 				<div>
@@ -167,11 +167,11 @@
 					<a class="one">集团报表</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/order.html">数据查询</a></li>
+							href="jituanBB/shuju.jsp">数据查询</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">报表</a></li>
+							href="jituanBB/baobiao.jsp">报表</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">统计分析</a></li>
+							href="jituanBB/fenxi.jsp">统计分析</a></li>
 					</ul>
 				</div>
 				<div>
@@ -292,17 +292,17 @@
 					<a class="one">决策分析</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/order.html">零售分析</a></li>
+							href="juece/lingshou.jsp">零售分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">批发分析</a></li>
+							href="juece/pifa.jsp">批发分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">库存分析</a></li>
+							href="juece/kucun.jsp">库存分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">采购分析</a></li>
+							href="juece/caigou.jsp">采购分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">连锁分析</a></li>
+							href="juece/liansuo.jsp">连锁分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">应收应付分析</a></li>
+							href="juece/yingshou.jsp">应收应付分析</a></li>
 					</ul>
 				</div>
 				<div>

@@ -1,5 +1,10 @@
 package com.util.controller;
 
+/**
+ *作者:zzq
+ *时间:11点29分
+ *作用:用户mvc控制层
+ **/
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;

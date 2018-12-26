@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.util.dao.ContractMapper">
+	<resultMap id="BaseResultMap" type="com.util.pojo.Contract">
+	<id column="id" property="id"></id>
+	<result column="contract_name" property="contractName" ></result>
+	<result column="contract_type" property="contractType"></result>
+	<result column="contract_NO" property="contractNO"></result>
+	<result column="fund_flow" property="fundFlow"></result>
+	<result column="contract_states" property="contractStates"></result>
+	<result column="Whether_invalid" property="WhetherInvalid"></result>
+	<result column="Whether_change" property="WhetherChange"></result>
+	<result column="undertaker_id" property="undertakerId"></result>
+	<result column="undertaker_name" property="undertakerName"></result>
+	<result column="phone" property="phone"></result>
+	<result column="feasor_id" property="feasorId"></result>
+	<result column="feasor_name" property="feasorName"></result>
+	<result column="take_date" property="takeDate"></result>
+	<result column="efficacy_date" property="efficacyDate"></result>
+	<result column="conclude_date" property="concludeDate"></result>
+	<result column="remark" property="remark"></result>
+	<result column="delivery_type" property="deliveryType"></result>
+	<result column="transportation_type" property="transportationType"></result>
+	<result column="first_party" property="firstParty"></result>
+	<result column="party_B" property="partyB"></result>
+	<result column="first_party_address" property="firstPartyAddress"></result>
+	<result column="party_B_address" property="partyBAddress"></result>
+	<result column="approval_number" property="approvalNumber"></result>
+	<result column="wastage" property="wastage"></result>
+	<result column="clearing_form" property="clearingForm"></result>
+	<result column="credit_period" property="creditPeriod"></result>
+	</resultMap>
+	<select id="selectAll" resultMap="BaseResultMap">
+		SELECT * FROM contract where 1=1
+	
+		<if test="contractType!=null and contractType!=0">
+			and contract_type=#{contractType}
+		</if>
+		<if test="contractStates!=null and contractStates!=0 ">
+			and contract_states=#{contractStates}
+		</if>
+		<if test="deliveryType!=null and deliveryType!=0 ">
+			and delivery_type=#{deliveryType}
+		</if>
+		<if test="transportationType!=null and transportationType!=0 ">
+			and transportation_type=#{transportationType}
+		</if>
+		<if test="contractNO!=null and contractNO!='' ">
+			and contract_NO like '%${contractNO}%'
+		</if>
+
+	</select>
+</mapper>

@@ -114,9 +114,9 @@
 					<a class="one">合同管理</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/dengji.jsp">合同登记</a></li>
+							href="hetong/moban.jsp">合同登记</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/selectAll.jsp">查询</a></li>
+							href="hetong/selectAll.html">查询</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="hetong/shenhe.jsp">审核</a></li>
 						<li><b class="tip"></b><a target="Conframe"

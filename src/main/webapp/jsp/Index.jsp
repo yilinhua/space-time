@@ -309,7 +309,7 @@
 					<a class="one">资料初装</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/order.html">货位资料初装</a></li>
+							href="cargo">货位资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">商品资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"

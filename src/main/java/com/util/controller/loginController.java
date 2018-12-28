@@ -29,6 +29,7 @@ public class loginController {
 	@RequestMapping("/login")
 	public String login1(Model model, @RequestParam(value="name")String name, @RequestParam(value="password")String password,HttpSession 
 			session) {
+	
 		String pwd = userService.select(name);
 		if (password.equals(pwd)) {
 			session.setAttribute("name", name);

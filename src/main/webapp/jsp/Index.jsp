@@ -131,11 +131,13 @@
 					<a class="one">采购管理</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/Maintain-add.html">订货管理</a></li>
+							href="selectList">订货管理</a>
+							</li>
+							
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/Maintain-edit.html">开票管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/Maintain-del.html">入库管理</a></li>
+							href="selectLists">入库管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/Maintain-del.html">退出开票</a></li>
 					</ul>
@@ -197,7 +199,8 @@
 					<a class="one">批发管理</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/order.html">订单管理</a></li>
+							href="Template/order.html">订单管理</a>
+							</li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">开票管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
@@ -309,7 +312,7 @@
 					<a class="one">资料初装</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/order.html">货位资料初装</a></li>
+							href="cargo">货位资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">商品资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.util.dao.CargoLocationMapper">
+	<select id="selectAll" resultType="com.util.pojo.CargoLocation" parameterType="string">
+		SELECT * FROM cargo_location where 1=1 
+		<if test="_parameter != null and _parameter != ''">
+	     and goodsname LIKE CONCAT('%',#{_parameter},'%') limit 0,1
+	    </if>
+	</select>
+	
+	<delete id="delete" >
+	delete from cargo_location where id=#{id}
+	</delete>
+	
+</mapper>

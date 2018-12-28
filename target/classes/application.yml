@@ -3,7 +3,7 @@ spring:
     dirver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/space-time?useSSL=false
     username: root
-    password: 1234
+    password: 123
   mvc:
     view:
       prefix: /jsp/

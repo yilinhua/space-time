@@ -11,7 +11,7 @@ public class Contract {
 	private String contractName; // 合同名称
 	private int contractType; // 合同类型
 	private String contractNO; // 合同编号
-	private String fundFlow; // 资金流向
+	private int fundFlow; // 资金流向
 	private int contractStates; // 合同状态
 	private int WhetherInvalid; // 是否作废
 	private int WhetherChange; // 是否变更
@@ -30,13 +30,34 @@ public class Contract {
 	private String partyB; // 乙方
 	private String firstPartyAddress;// 甲方地址
 	private String partyBAddress; // 乙方地址
-
-	
-
+	private String firstPartyName; //甲方法定人
+	private String partyBName; //乙方法定人
+	private String implement; //执行情况
 	private String approvalNumber; // 批准文号
 	private int wastage; // 运输费、合理损耗负责方
 	private int clearingForm; // 结算方式
 	private int creditPeriod; // 付款期限
+	
+	
+	public String getImplement() {
+		return implement;
+	}
+	public void setImplement(String implement) {
+		this.implement = implement;
+	}
+	public String getFirstPartyName() {
+		return firstPartyName;
+	}
+	public void setFirstPartyName(String firstPartyName) {
+		this.firstPartyName = firstPartyName;
+	}
+	public String getPartyBName() {
+		return partyBName;
+	}
+	public void setPartyBName(String partyBName) {
+		this.partyBName = partyBName;
+	}
+	
 	
 	public String getContractName() {
 		return contractName;
@@ -64,10 +85,11 @@ public class Contract {
 		this.contractType = contractType;
 	}
 	
-	public String getFundFlow() {
+	
+	public int getFundFlow() {
 		return fundFlow;
 	}
-	public void setFundFlow(String fundFlow) {
+	public void setFundFlow(int fundFlow) {
 		this.fundFlow = fundFlow;
 	}
 	public int getContractStates() {

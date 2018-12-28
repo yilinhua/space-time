@@ -36,7 +36,30 @@
 	-->
 
 </head>
-
+<script type="text/javascript">
+	function qinhk() {//qing
+		var contractNO = $("#contractNO").val();
+		if (contractNO != null) {
+			$("#contractNO").val("");
+		}
+		var contractType = $("#contractType").val();
+		if (contractType != null) {
+			$("#contractType").val(0);
+		}
+		var contractStates = $("#contractStates").val();
+		if (contractStates != null) {
+			$("#contractStates").val(0);
+		}
+		var deliveryType = $("#deliveryType").val();
+		if (deliveryType != null) {
+			$("#deliveryType").val(0);
+		}
+		var transportationType = $("#transportationType").val();
+		if (transportationType != null) {
+			$("#transportationType").val(0);
+		}
+	}
+</script>
 <body>
 	<div class="alert alert-info">
 		当前位置<b class="tip"></b>合同管理<b class="tip"></b>合同查询
@@ -48,38 +71,40 @@
 					<td colspan="10" class="auto-style2">&nbsp;请填写查询条件</td>
 				</tr>
 				<tr>
+
 					<td class="tdl">合同编号</td>
-					<td class="detail"><input id="formid"  name="contractNO"
+					<td class="detail"><input id="contractNO" name="contractNO"
 						value="${contractNO}" class="ipt" /></td>
-					<td class="tdl"  >合同类型</td>
-					<td><select size="1" name="contractType" id="bumen">
-							<option value="0"></option>
-							<option value="1">单项合同</option>
-							<option value="2">双项合同</option>
+					<td class="tdl">合同类型</td>
+					<td><select size="1" name="contractType" id="contractType">
+							<option value="0">请选择</option>
+							<option value="1"
+								<c:if test="${contractType==1}">selected</c:if>>单项合同</option>
+							<option value="2"<c:if test="${contractType==2}">selected</c:if>>双项合同</option>
 					</select></td>
 					<td class="tdl">合同状态</td>
-					<td><select size="1" name="contractStates" id="bumen">
-							<option value="0"></option>
-							<option value="1">草稿</option>
-							<option value="2">会签</option>
-							<option value="3">待生效</option>
-							<option value="4">履行</option>
-							<option value="5">归档</option>
-							<option value="6">作废</option>
-							<option value="7">变更</option>
+					<td><select size="1" name="contractStates" id="contractStates">
+							<option value="0">请选择</option>
+							<option value="1"<c:if test="${contractStates==1}">selected</c:if>>草稿</option>
+							<option value="2"<c:if test="${contractStates==2}">selected</c:if>>会签</option>
+							<option value="3"<c:if test="${contractStates==3}">selected</c:if>>待生效</option>
+							<option value="4"<c:if test="${contractStates==4}">selected</c:if>>履行</option>
+							<option value="5"<c:if test="${contractStates==6}">selected</c:if>>归档</option>
+							<option value="6"<c:if test="${contractStates==6}">selected</c:if>>作废</option>
+							<option value="7"<c:if test="${contractStates==7}">selected</c:if>>变更</option>
 					</select></td>
 					<td class="tdl">交货方式</td>
-					<td><select size="1" name="deliveryType" id="bumen">
-							<option value="0"></option>
-							<option value="1">送货</option>
-							<option value="2">自提</option>
+					<td><select size="1" name="deliveryType" id="deliveryType">
+							<option value="0">请选择</option>
+							<option value="1"<c:if test="${deliveryType==1}">selected</c:if>>送货</option>
+							<option value="2"<c:if test="${deliveryType==2}">selected</c:if>>自提</option>
 					</select></td>
 					<td class="tdl">运输方式</td>
-					<td><select size="1" name="transportationType" id="bumen">
-							<option value="0"></option>
-							<option value="1">航空</option>
-							<option value="2">铁路</option>
-							<option value="3">公路</option>
+					<td><select size="1" name="transportationType" id="transportationType">
+							<option value="0">请选择</option>
+							<option value="1"<c:if test="${transportationType==1}">selected</c:if>>航空</option>
+							<option value="2"<c:if test="${transportationType==2}">selected</c:if>>铁路</option>
+							<option value="3"<c:if test="${transportationType==3}">selected</c:if>>公路</option>
 					</select></td>
 				</tr>
 				<tr>
@@ -87,7 +112,7 @@
 				</tr>
 				<tr>
 					<td colspan="10" align="right"><input class="btn" id="find"
-						type="submit" value="查询" /> <input class="btn" type="button"
+						type="submit" value="查询" /> <input class="btn" onclick="qinhk()"  type="button"
 						value="清空" /></td>
 				</tr>
 				<tr>

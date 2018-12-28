@@ -114,17 +114,17 @@
 					<a class="one">合同管理</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/moban.jsp">合同登记</a></li>
+							href="jsp/hetong/moban.jsp">合同登记</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="hetong/selectAll.html">查询</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/shenhe.jsp">审核</a></li>
+							href="/hetong/shenhe.html">审核</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="hetong/wendang.jsp">文档管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/tongji.jsp">统计报表</a></li>
+							href="/hetong/tongji.html">生成报表</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/qingk.jsp">执行情况</a></li>
+							href="/hetong/zhix.html">执行情况</a></li>
 					</ul>
 				</div>
 				<div>

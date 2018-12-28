@@ -12,4 +12,20 @@ import com.util.pojo.Contract;
 @Mapper
 public interface ContractMapper {
 	List<Contract> selectAll(Contract contract);
+
+	int addContract(Contract contract);
+
+	List<Contract> selectshen(Contract contract);
+
+	int he(int id);
+
+	List<Contract> zhixing(Contract contract);
+
+	List<Contract> selectBB();
+
+	// 根据id获取合同详细信息
+	List<Contract> selectid(int id);
+
+	// 导出exec
+	List<Contract> teacherinfor();
 }

@@ -13,4 +13,10 @@ public interface CargoLocationMapper {
 	List<CargoLocation> selectAll(String  name);
 	
 	int delete(int id);
+	
+	CargoLocation chaId(int id);
+	
+	int update(CargoLocation cargo);
+	
+	int huoWeiInsert(CargoLocation cargo);
 }

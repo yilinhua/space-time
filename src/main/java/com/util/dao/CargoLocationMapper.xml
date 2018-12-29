@@ -13,4 +13,18 @@
 	delete from cargo_location where id=#{id}
 	</delete>
 	
+	<select id="chaId" resultType="com.util.pojo.CargoLocation" >
+		SELECT * FROM cargo_location where id=#{id}
+	</select>
+	
+	<update id="update">
+	 update cargo_location set 
+	 code=#{code},goodsname=#{goodsname},specification_type=#{specification_type},basic_unit=#{basic_unit},
+	 Warehouse=#{warehouse},`explain`=#{explain} where id=#{id}
+	</update>
+	
+	<insert id="huoWeiInsert" useGeneratedKeys="true">
+	insert cargo_location(code,goodsname,specification_type,basic_unit,Warehouse,`Explain`)
+	              value(#{code},#{goodsname},#{specification_type},#{basic_unit},#{warehouse},#{explain})
+	</insert>
 </mapper>

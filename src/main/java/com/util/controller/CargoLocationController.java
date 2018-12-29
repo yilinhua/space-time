@@ -37,4 +37,28 @@ public class CargoLocationController {
 		
 		return "0";
 	}
+	@RequestMapping("/chaId")
+	public String chaId(Model model,int id){
+	    
+		CargoLocation ca = cargo.chaId(id);
+	    model.addAttribute("ca", ca);
+		
+		return "ziliao/updateHuoWei";
+	}
+	
+	@RequestMapping("/update")
+	public String update(CargoLocation cargo){
+		System.out.println(cargo.getCode());
+		this.cargo.update(cargo);
+		
+		return "redirect:cargo";
+	}
+	
+	@RequestMapping("huoWeiInsert")
+	public String huoWeiInsert(CargoLocation cargo){
+		System.out.println(111);
+		System.out.println(cargo.getGoodsname());
+		this.cargo.huoWeiInsert(cargo);
+		return "redirect:cargo";
+	}
 }

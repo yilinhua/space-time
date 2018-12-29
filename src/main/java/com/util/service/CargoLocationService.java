@@ -12,4 +12,10 @@ public interface CargoLocationService {
 	List<CargoLocation> selectAll(String  goodsName);
 	
 	int delete(int id);
+	
+	CargoLocation chaId(int id);
+	
+	int update(CargoLocation cargo);
+	
+	int huoWeiInsert(CargoLocation cargo);
 }

@@ -46,9 +46,9 @@ public class ContractServiceimpl implements ContractService {
 	}
 
 	@Override
-	public List<Contract> selectBB() {
+	public List<Contract> selectBB(Contract contract) {
 		// TODO Auto-generated method stub
-		return contractMapper.selectBB();
+		return contractMapper.selectBB(contract);
 	}
 
 	@Override

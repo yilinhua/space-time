@@ -16,9 +16,9 @@ public interface ContractService {
 
 	List<Contract> zhixing(Contract contract);
 
-	List<Contract> selectBB();
+	List<Contract> selectBB(Contract contract);
 
 	List<Contract> selectid(int id);
 	
-	List<Contract> teacherinfor();
+	List<Contract> teacherinfor(Contract contract);
 }

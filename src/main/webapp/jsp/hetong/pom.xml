@@ -32,18 +32,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-<dependency>
-    <groupId>com.sun.jna</groupId>
-    <artifactId>jna</artifactId>
-    <version>3.0.9</version>
-</dependency>
-<!-- exec依赖 -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
-
-		</dependency>
 
 
 
@@ -112,22 +100,91 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.3</version>
 		</dependency>
-<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
+			<version>3.17</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
+			<artifactId>poi-ooxml</artifactId> <version>3.17</version> </dependency> 
+			<dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-ooxml-schemas</artifactId> 
+			<version>3.17</version> </dependency> -->
+		<!-- <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17<ersion>
+		</dependency>
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>
-				spring-boot-starter-data-elasticsearch
-			</artifactId>
-=======
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-examples</artifactId>
+			<version>3.17<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-excelant</artifactId>
+			<version>3.17<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.17<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.17<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>stax</groupId>
+			<artifactId>stax-api</artifactId>
+			<version>1.0<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.6.0<ersion>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17<ersion>
+		</dependency> -->
 
 
 
-
-
-
-
-			<!-- poi-->
-		    <dependency>
+<!-- poi-->
+		    <!-- <dependency>
 		      <groupId>org.apache.poi</groupId>
 		      <artifactId>poi-ooxml</artifactId>
 		      <version>3.17</version>
@@ -176,57 +233,16 @@
 		      <groupId>org.apache.poi</groupId>
 		      <artifactId>poi</artifactId>
 		      <version>3.17</version>
-		    </dependency>
+		    </dependency> -->
 
 
 
-
-
-
-
-
-		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
-			<version>3.17</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi-ooxml</artifactId> <version>3.17</version> </dependency> 
-			<dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-ooxml-schemas</artifactId> 
-			<version>3.17</version> </dependency> -->
-		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-ooxml</artifactId> 
-			<version>3.17<ersion> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi</artifactId> <version>3.17<ersion> </dependency> <dependency> 
-			<groupId>org.apache.poi</groupId> <artifactId>poi-examples</artifactId> <version>3.17<ersion> 
-			</dependency> <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-excelant</artifactId> 
-			<version>3.17<ersion> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi-ooxml-schemas</artifactId> <version>3.17<ersion> </dependency> 
-			<dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-scratchpad</artifactId> 
-			<version>3.17<ersion> </dependency> <dependency> <groupId>dom4j</groupId> 
-			<artifactId>dom4j</artifactId> <version>1.6.1<ersion> </dependency> <dependency> 
-			<groupId>stax</groupId> <artifactId>stax-api</artifactId> <version>1.0<ersion> 
-			</dependency> <dependency> <groupId>org.apache.xmlbeans</groupId> <artifactId>xmlbeans</artifactId> 
-			<version>2.6.0<ersion> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi</artifactId> <version>3.17<ersion> </dependency> -->
-
-
-
-		<!-- poi -->
-		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-ooxml</artifactId> 
-			<version>3.17</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi</artifactId> <version>3.17</version> </dependency> <dependency> 
-			<groupId>org.apache.poi</groupId> <artifactId>poi-examples</artifactId> <version>3.17</version> 
-			</dependency> <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-excelant</artifactId> 
-			<version>3.17</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi-ooxml-schemas</artifactId> <version>3.17</version> </dependency> 
-			<dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-scratchpad</artifactId> 
-			<version>3.17</version> </dependency> <dependency> <groupId>dom4j</groupId> 
-			<artifactId>dom4j</artifactId> <version>1.6.1</version> </dependency> <dependency> 
-			<groupId>stax</groupId> <artifactId>stax-api</artifactId> <version>1.0</version> 
-			</dependency> <dependency> <groupId>org.apache.xmlbeans</groupId> <artifactId>xmlbeans</artifactId> 
-			<version>2.6.0</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi</artifactId> <version>3.17</version> </dependency> -->
-
-			
-
-		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
-			<version>3.17</version> </dependency> -->
+<!-- 
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency> -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
@@ -234,7 +250,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jersey</artifactId>
->>>>>>> branch 'master' of https://github.com/yilinhua/space-time.git
 		</dependency>
 	</dependencies>
 
@@ -247,4 +262,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>

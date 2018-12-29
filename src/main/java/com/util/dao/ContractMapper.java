@@ -21,11 +21,11 @@ public interface ContractMapper {
 
 	List<Contract> zhixing(Contract contract);
 
-	List<Contract> selectBB();
+	List<Contract> selectBB(Contract contract);
 
 	// 根据id获取合同详细信息
 	List<Contract> selectid(int id);
 
 	// 导出exec
-	List<Contract> teacherinfor();
+	List<Contract> teacherinfor(Contract contract);
 }

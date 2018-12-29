@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'Warehousing.jsp' starting page</title>
+    <title>My JSP 'Invoice.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,7 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  
     <link rel="stylesheet" type="text/css" href="../Styles/formui.css" />
     <link rel="stylesheet" type="text/css" href="../Styles/admin-all.css" />
     <link rel="stylesheet" type="text/css" href="../Styles/base.css"/>
@@ -31,29 +30,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="../Styles/ui-lightness/jquery-ui-1.8.22.custom.css" />
   <body>
   
-  <form action="selectLists" method="post">
+  <form action="select" method="post">
     <table border="1" cellspacing="0" class="tb" id="top">
     <thead>
     <tr>
-    <th>入库时间</th>
+    <th>客户名字</th>
     <th>药物名称</th>
     <th>数量</th>
-    <th>仓库名</th>
-    <th>货架号</th>
+    <th>单价</th>
     <th>总金额</th>
-    <th>操作</th>
+    <th>时间</th>
+    <th>开票人</th>
     </tr>
     </thead>
     
    <c:forEach items="${list}" var="list">
    <tr>
-   <td>${list.date}</td>
-   <td>${list.drugname}</td>
+   <td>${list.customername}</td>
+   <td>${list.productname}</td>
    <td>${list.number}</td>
-   <td>${list.warehousename}</td>
-   <td>${list.shelfnumber}</td>
-   <td>${list.totalsum}</td>
-   <td></td>
+   <td>${list.unitprice}</td>
+   <td>${list.fullamount}</td>
+   <td>${list.billingtime}</td>
+   <td>${list.drawer}</td>
    </tr>
    </c:forEach>
     

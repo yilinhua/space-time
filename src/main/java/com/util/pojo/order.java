@@ -1,6 +1,8 @@
 package com.util.pojo;
 
-import com.mysql.fabric.xmlrpc.base.Data;
+import java.sql.Date;
+
+
 
 public class order {
 	private int id;
@@ -8,7 +10,7 @@ public class order {
 	private int tradeName;
 	private int number;
 	private double totalSum;
-	private Data ordertime;
+	private Date ordertime;
 	private String address;
 	public int getId() {
 		return id;
@@ -40,10 +42,10 @@ public class order {
 	public void setTotalSum(double totalSum) {
 		this.totalSum = totalSum;
 	}
-	public Data getOrdertime() {
+	public Date getOrdertime() {
 		return ordertime;
 	}
-	public void setOrdertime(Data ordertime) {
+	public void setOrdertime(Date ordertime) {
 		this.ordertime = ordertime;
 	}
 	public String getAddress() {

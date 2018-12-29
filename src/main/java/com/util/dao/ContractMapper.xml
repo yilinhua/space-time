@@ -3,37 +3,40 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.util.dao.ContractMapper">
 	<resultMap id="BaseResultMap" type="com.util.pojo.Contract">
-	<id column="id" property="id"></id>
-	<result column="contract_name" property="contractName" ></result>
-	<result column="contract_type" property="contractType"></result>
-	<result column="contract_NO" property="contractNO"></result>
-	<result column="fund_flow" property="fundFlow"></result>
-	<result column="contract_states" property="contractStates"></result>
-	<result column="Whether_invalid" property="WhetherInvalid"></result>
-	<result column="Whether_change" property="WhetherChange"></result>
-	<result column="undertaker_id" property="undertakerId"></result>
-	<result column="undertaker_name" property="undertakerName"></result>
-	<result column="phone" property="phone"></result>
-	<result column="feasor_id" property="feasorId"></result>
-	<result column="feasor_name" property="feasorName"></result>
-	<result column="take_date" property="takeDate"></result>
-	<result column="efficacy_date" property="efficacyDate"></result>
-	<result column="conclude_date" property="concludeDate"></result>
-	<result column="remark" property="remark"></result>
-	<result column="delivery_type" property="deliveryType"></result>
-	<result column="transportation_type" property="transportationType"></result>
-	<result column="first_party" property="firstParty"></result>
-	<result column="party_B" property="partyB"></result>
-	<result column="first_party_address" property="firstPartyAddress"></result>
-	<result column="party_B_address" property="partyBAddress"></result>
-	<result column="approval_number" property="approvalNumber"></result>
-	<result column="wastage" property="wastage"></result>
-	<result column="clearing_form" property="clearingForm"></result>
-	<result column="credit_period" property="creditPeriod"></result>
+		<id column="id" property="id"></id>
+		<result column="contract_name" property="contractName"></result>
+		<result column="contract_type" property="contractType"></result>
+		<result column="contract_NO" property="contractNO"></result>
+		<result column="fund_flow" property="fundFlow"></result>
+		<result column="contract_states" property="contractStates"></result>
+		<result column="Whether_invalid" property="WhetherInvalid"></result>
+		<result column="Whether_change" property="WhetherChange"></result>
+		<result column="undertaker_id" property="undertakerId"></result>
+		<result column="undertaker_name" property="undertakerName"></result>
+		<result column="phone" property="phone"></result>
+		<result column="feasor_id" property="feasorId"></result>
+		<result column="feasor_name" property="feasorName"></result>
+		<result column="take_date" property="takeDate"></result>
+		<result column="efficacy_date" property="efficacyDate"></result>
+		<result column="conclude_date" property="concludeDate"></result>
+		<result column="remark" property="remark"></result>
+		<result column="delivery_type" property="deliveryType"></result>
+		<result column="transportation_type" property="transportationType"></result>
+		<result column="first_party" property="firstParty"></result>
+		<result column="party_B" property="partyB"></result>
+		<result column="first_party_address" property="firstPartyAddress"></result>
+		<result column="party_B_address" property="partyBAddress"></result>
+		<result column="approval_number" property="approvalNumber"></result>
+		<result column="wastage" property="wastage"></result>
+		<result column="clearing_form" property="clearingForm"></result>
+		<result column="credit_period" property="creditPeriod"></result>
+		<result column="firstParty_name" property="firstPartyName"></result>
+		<result column="partyB_name" property="partyBName"></result>
+		<result column="implement" property="implement"></result>
 	</resultMap>
 	<select id="selectAll" resultMap="BaseResultMap">
 		SELECT * FROM contract where 1=1
-	
+
 		<if test="contractType!=null and contractType!=0">
 			and contract_type=#{contractType}
 		</if>
@@ -50,5 +53,66 @@
 			and contract_NO like '%${contractNO}%'
 		</if>
 
+	</select>
+
+	<select id="selectshen" resultMap="BaseResultMap">
+		SELECT * FROM contract WHERE 1=1 and contract_states=2
+		<if test="fundFlow !=null and fundFlow!=0">
+			and fund_flow=#{fundFlow}
+		</if>
+	</select>
+	<update id="he">
+		UPDATE contract SET contract_states=4 WHERE id=#{id}
+	</update>
+	<insert id="addContract">
+		INSERT INTO contract
+		(contract_name,contract_NO,contract_type,conclude_date,take_date,efficacy_date,first_party,
+		party_B,firstParty_name,first_party_address,partyB_name,party_B_address,undertaker_name,
+		phone,feasor_name,delivery_type,transportation_type,approval_number,wastage,clearing_form,
+		credit_period)
+		VALUES
+		(#{contractName},#{contractNO},#{contractType},#{concludeDate},#{takeDate},#{efficacyDate},
+		#{firstParty},#{partyB},#{firstPartyName},#{firstPartyAddress},#{partyBName},#{partyBAddress},
+		#{undertakerName},#{phone},#{feasorName},#{deliveryType},#{transportationType},#{approvalNumber},
+		#{wastage},#{clearingForm},#{creditPeriod})
+	</insert>
+
+	<select id="zhixing" resultMap="BaseResultMap">
+		select * from contract where 1=1
+		<if test="contractStates!=null and contractStates!=0">
+			and contract_states=#{contractStates}
+		</if>
+
+		<if test="contractType!=null and contractType!=0">
+			and contract_type=#{contractType}
+		</if>
+
+		<if test="implement!=null and implement!=0">
+			and implement=#{implement}
+		</if>
+	</select>
+
+	<select id="selectBB" resultMap="BaseResultMap">
+		SELECT * FROM contract where 1=1
+		<if test="contractType!=null and contractType!=0">
+			and contract_type=#{contractType}
+		</if>
+		<if test="contractStates!=null and contractStates!=0">
+			and contract_states=#{contractStates}
+		</if>
+	</select>
+	<select id="selectid" resultMap="BaseResultMap">
+		SELECT * FROM contract where
+		id=#{id}
+	</select>
+
+	<select id="teacherinfor" resultMap="BaseResultMap">
+		SELECT * FROM contract where 1=1
+		<if test="contractType!=null and contractType!=0">
+			and contract_type=#{contractType}
+		</if>
+		<if test="contractStates!=null and contractStates!=0">
+			and contract_states=#{contractStates}
+		</if>
 	</select>
 </mapper>

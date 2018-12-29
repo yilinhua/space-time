@@ -44,16 +44,12 @@
 			<tr>
 				<td align="center" colspan="6" class="auto-style2">&nbsp;选择合同模板</td>
 			</tr>
-			<tr>
-				<td align="center" class="tdl">站内、供应商合同模板</td>
-				<td align="center" class="tdl"><a href="hetong/gys.jsp"><input type="button" value="选择"></a></td>
-			</tr>
 			<tr><td align="center" class="tdl">供应商、批发商合同模板</td>
-			<td align="center" class="tdl"><a href="hetong/dengji.jsp"><input type="button" value="选择"></a></td>
+			<td align="center" class="tdl"><a href="jsp/hetong/dengji.jsp"><input type="button" value="选择"></a></td>
 			</tr>
 			<tr>
 			<td align="center" class="tdl">供应商合作协议书</td>
-			<td align="center" class="tdl"><a href="hetong/xieyi.jsp"><input type="button" value="选择"></a></td>
+			<td align="center" class="tdl"><a href="jsp/hetong/xieyi.jsp"><input type="button" value="选择"></a></td>
 			</tr>
 		<tbody>
 		</tbody>

@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</td>
 			</tr>
 			<tr>
-				<td align="center" colspan="6" class="auto-style2">&nbsp;<a href="hetong/gys.jsp"><input type="submit" value="我已阅读,前往签署"></a></td>
+				<td align="center" colspan="6" class="auto-style2">&nbsp;<a href="jsp/hetong/gys.jsp"><input type="submit" value="我已阅读,前往签署"></a></td>
 			</tr>
 		<tbody>
 		</tbody>

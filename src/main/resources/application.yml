@@ -8,3 +8,11 @@ spring:
     view:
       prefix: /jsp/
       suffix: .jsp
+
+
+pagehelper:
+ helperDialect: mysql
+ reasonable: true
+ supportMethodsArguments: true
+ params: count=countSql
+      

@@ -40,6 +40,12 @@
 	function downloadfile() {
 		window.location.href = "/UserExcelDownloads";
 	}
+	function chuan() {
+		var name = $("#name").val();
+		var contractType=$("#contractType").val();
+		var contractStates=$("#contractStates").val();
+		window.location.href = "/exec?name=" + name+"&contractType="+contractType+"&contractStates="+contractStates;
+	}
 </script>
 <body>
 	<div class="alert alert-info">
@@ -56,20 +62,20 @@
 					<td class="tdl">合同类型</td>
 					<td><select size="1" name="contractType" id="contractType">
 							<option value="0">请选择</option>
-							<option value="1">单项合同</option>
-							<option value="2">双项合同</option>
-							
+							<option value="1"<c:if test="${contractType==1}">selected</c:if>>单项合同</option>
+							<option value="2"<c:if test="${contractType==2}">selected</c:if>>双项合同</option>
+
 					</select></td>
 					<td class="tdl">合同状态</td>
 					<td><select size="1" name="contractStates" id="contractStates">
 							<option value="0">请选择</option>
-							<option value="1">草稿</option>
-							<option value="2">会签</option>
-							<option value="3">待生效</option>
-							<option value="4">履行</option>
-							<option value="5">归档</option>
-							<option value="6">作废</option>
-							<option value="7">已变更</option>
+							<option value="1"<c:if test="${contractStates==1}">selected</c:if>>草稿</option>
+							<option value="2"<c:if test="${contractStates==2}">selected</c:if>>会签</option>
+							<option value="3"<c:if test="${contractStates==3}">selected</c:if>>待生效</option>
+							<option value="4"<c:if test="${contractStates==4}">selected</c:if>>履行</option>
+							<option value="5"<c:if test="${contractStates==5}">selected</c:if>>归档</option>
+							<option value="6"<c:if test="${contractStates==6}">selected</c:if>>作废</option>
+							<option value="7"<c:if test="${contractStates==7}">selected</c:if>>已变更</option>
 					</select></td>
 					<td class="tdl"><input type="submit" value="搜索"></td>
 				</tr>
@@ -101,9 +107,9 @@
 					</tr>
 				</c:forEach>
 				<tr>
-					<td colspan="10" class="auto-style2">&nbsp;<a href="#"
-						class="easyui-linkbutton" onclick="downloadfile();"><input
-							type="button" value="导出数据"></a></td>
+					<td>请输入导出文件名<input type="text" name="name" id="name"></td>
+					<td colspan="10" class="auto-style2">&nbsp;<input
+						type="button" value="导出数据" onclick="chuan()"></td>
 				</tr>
 			</thead>
 		</table>

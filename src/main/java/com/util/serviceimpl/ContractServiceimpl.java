@@ -58,9 +58,9 @@ public class ContractServiceimpl implements ContractService {
 	}
 
 	@Override
-	public List<Contract> teacherinfor() {
+	public List<Contract> teacherinfor(Contract contract) {
 		// TODO Auto-generated method stub
-		return contractMapper.teacherinfor();
+		return contractMapper.teacherinfor(contract);
 	}
 
 }

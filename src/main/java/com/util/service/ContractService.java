@@ -20,5 +20,5 @@ public interface ContractService {
 
 	List<Contract> selectid(int id);
 	
-	List<Contract> teacherinfor();
+	List<Contract> teacherinfor(Contract contract);
 }

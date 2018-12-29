@@ -27,5 +27,5 @@ public interface ContractMapper {
 	List<Contract> selectid(int id);
 
 	// 导出exec
-	List<Contract> teacherinfor();
+	List<Contract> teacherinfor(Contract contract);
 }

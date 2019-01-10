@@ -69,12 +69,12 @@
 		(contract_name,contract_NO,contract_type,conclude_date,take_date,efficacy_date,first_party,
 		party_B,firstParty_name,first_party_address,partyB_name,party_B_address,undertaker_name,
 		phone,feasor_name,delivery_type,transportation_type,approval_number,wastage,clearing_form,
-		credit_period)
+		credit_period,fund_flow)
 		VALUES
 		(#{contractName},#{contractNO},#{contractType},#{concludeDate},#{takeDate},#{efficacyDate},
 		#{firstParty},#{partyB},#{firstPartyName},#{firstPartyAddress},#{partyBName},#{partyBAddress},
 		#{undertakerName},#{phone},#{feasorName},#{deliveryType},#{transportationType},#{approvalNumber},
-		#{wastage},#{clearingForm},#{creditPeriod})
+		#{wastage},#{clearingForm},#{creditPeriod},#{fundFlow})
 	</insert>
 
 	<select id="zhixing" resultMap="BaseResultMap">

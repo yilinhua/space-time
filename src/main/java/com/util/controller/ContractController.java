@@ -61,6 +61,11 @@ public class ContractController {
 		return "";
 
 	}
+	@RequestMapping("/test")
+	public String te(){
+		return "/jituanBB/test";
+		
+	}
 
 	@RequestMapping("/hetong/shenhe.html")
 	public String shenhe(Model model, Contract contract) {

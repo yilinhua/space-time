@@ -10,6 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title></title>
+    
     <link rel="stylesheet" type="text/css" href="../Styles/admin-all.css" />
     <link rel="stylesheet" type="text/css" href="../Styles/base.css"/>
     <script type="text/javascript" src="../Scripts/jquery-1.7.2.js"></script> 
@@ -32,6 +33,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div class="alert alert-info">当前位置<b class="tip"></b>决策分析<b class="tip"></b>零售分析</div>
+     <div class="alert alert-info">当前位置<b class="tip"></b>集团报表<b class="tip"></b>统计分析</div>
+     <table class="tbform">
+		<tr>
+			<td align="center" class="tdl">入出库分析</td>
+			<td align="center" class="tdl"><a href="accessTest"><input
+					type="button" value="选择"></a></td>
+		</tr>
+		
+		<tr>
+			<td align="center" class="tdl">货位分析</td>
+			<td align="center" class="tdl"><a href="/ddd"><input
+					type="button" value="选择"></a></td>
+		</tr>
+		<tr>
+			<td align="center" class="tdl">盘点分析</td>
+			<td align="center" class="tdl"><a href="/pandianDao"><input
+					type="button" value="选择"></a></td>
+		</tr>
+	</table>
   </body>
 </html>

@@ -44,7 +44,7 @@
 	<form action="/hetong/shenhe.html" method="post">
 		<table class="tbform">
 			<thead>
-				<tr>
+				<tr >
 					<td colspan="10" class="auto-style2">&nbsp;合同审核</td>
 				</tr>
 				<tr>
@@ -69,7 +69,7 @@
 					<th>操作</th>
 				</tr>
 				<c:forEach items="${list}" var="list">
-					<tr>
+					<tr align="center">
 						<th>${list.contractNO}</th>
 						<th align="center"><c:if test="${list.contractType==1}">单项合同</c:if>
 							<c:if test="${list.contractType==2}">双项合同</c:if></th>
@@ -86,8 +86,11 @@
 						<th>${list.undertakerName}</th>
 						<th>${list.feasorName}</th>
 						<th>${list.approvalNumber}</th>
-						<th><a href="/hetong/sh?id=${list.id}"><input
-								type="button" value="审核"></a></th>
+						<th ><a href="/hetong/sh?id=${list.id}"><input
+								type="button" value="审核"></a>
+								<a href="/hetong/sh?id=${list.id}"><input
+								type="button" value="不通过"></a>
+								</th>
 					</tr>
 				</c:forEach>
 			</thead>

@@ -169,11 +169,11 @@
 					<a class="one">集团报表</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="jituanBB/shuju.jsp">数据查询</a></li>
+							href="jsp/jituanBB/shuju.jsp">数据查询</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="jituanBB/baobiao.jsp">报表</a></li>
+							href="jsp/jituanBB/baobiao.jsp">报表</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="jituanBB/fenxi.jsp">统计分析</a></li>
+							href="jsp/jituanBB/fenxi.jsp">统计分析</a></li>
 					</ul>
 				</div>
 				<div>
@@ -295,17 +295,14 @@
 					<a class="one">决策分析</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/lingshou.jsp">零售分析</a></li>
+							href="jsp/juece/lingshou.jsp">零售分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/pifa.jsp">批发分析</a></li>
+							href="jsp/juece/pifa.jsp">批发分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/kucun.jsp">库存分析</a></li>
+							href="jsp/juece/kucun.jsp">库存分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/caigou.jsp">采购分析</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="juece/liansuo.jsp">连锁分析</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="juece/yingshou.jsp">应收应付分析</a></li>
+							href="jsp/juece/caigou.jsp">采购分析</a></li>
+						
 					</ul>
 				</div>
 				<div>

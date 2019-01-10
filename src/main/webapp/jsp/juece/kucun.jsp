@@ -11,7 +11,6 @@
 <base href="<%=basePath%>">
 
 <title></title>
-
 <link rel="stylesheet" type="text/css" href="../Styles/admin-all.css" />
 <link rel="stylesheet" type="text/css" href="../Styles/base.css" />
 <script type="text/javascript" src="../Scripts/jquery-1.7.2.js"></script>
@@ -33,30 +32,22 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
 </head>
+
 <body>
 	<div class="alert alert-info">
-		当前位置<b class="tip"></b>集团报表<b class="tip"></b>报表
+		当前位置<b class="tip"></b>决策分析<b class="tip"></b>库存分析
 	</div>
 	<table class="tbform">
 		<tr>
-			<td align="center" class="tdl">入库记录</td>
-			<td align="center" class="tdl"><a href="/selectList"><input
-					type="button" value="选择"></a></td>
+			<td align="center" class="tdl">销售情况</td>
+			<td align="center" class="tdl"><a
+				href="jsp/juece/yuanrejuece.jsp"><input type="button" value="选择"></a></td>
 		</tr>
 		<tr>
-			<td align="center" class="tdl">出库记录</td>
-			<td align="center" class="tdl"><a href="/selectList"><input
-					type="button" value="选择"></a></td>
-		</tr>
-		<tr>
-			<td align="center" class="tdl">货位查询</td>
-			<td align="center" class="tdl"><a href="/cargo"><input
-					type="button" value="选择"></a></td>
-		</tr>
-		<tr>
-			<td align="center" class="tdl">仓储盘点</td>
-			<td align="center" class="tdl"><a href="/cargo"><input
+			<td align="center" class="tdl">进货情况</td>
+			<td align="center" class="tdl"><a href="huowu"><input
 					type="button" value="选择"></a></td>
 		</tr>
 	</table>

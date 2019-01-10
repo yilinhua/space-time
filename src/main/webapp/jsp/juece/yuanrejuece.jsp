@@ -1,15 +1,16 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title></title>
+<head>
+<base href="<%=basePath%>">
+
+	<title></title>
     <link rel="stylesheet" type="text/css" href="../Styles/admin-all.css" />
     <link rel="stylesheet" type="text/css" href="../Styles/base.css"/>
     <script type="text/javascript" src="../Scripts/jquery-1.7.2.js"></script> 
@@ -30,8 +31,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
-  <body>
-    <div class="alert alert-info">当前位置<b class="tip"></b>决策分析<b class="tip"></b>采购分析</div>
-  </body>
+
+<body>
+	<div class="alert alert-info">
+		当前位置<b class="tip"></b>决策分析<b class="tip"></b>应付应收分析
+	</div>
+	<table class="tbform">
+		<tr>
+			<td align="center" class="tdl">新客户分析</td>
+			<td align="center" class="tdl"><a href="/xint"><input
+					type="button" value="选择"></a></td>
+		</tr>
+		<tr>
+			<td align="center" class="tdl">老客户分析</td>
+			<td align="center" class="tdl"><a href="/renyuan"><input
+					type="button" value="选择"></a></td>
+		</tr>
+	</table>
+</body>
 </html>

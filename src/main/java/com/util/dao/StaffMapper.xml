@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+        
+        
+<mapper namespace="com.util.dao.StaffMapper">
+
+
+ <!--  <resultMap id="selectMap" type="com.util.pojo.Staff">
+  <id column="id" jdbcType="INTEGER"  property="id"></id>
+  <result column="name" jdbcType="VARCHAR" property="name"></result>
+  <result column="code" jdbcType="VARCHAR" property="code"></result>
+  <result column="phone" jdbcType="VARCHAR" property="phone"></result>
+  <result column="address" jdbcType="VARCHAR" property="address"></result>
+  <result column="sex" jdbcType="INTEGER" property="sex"></result>
+  <result column="pid" jdbcType="VARCHAR" property="pid"></result>
+  <result column="departmentID" jdbcType="INTEGER" property="departmentID"></result>
+  <result column="entry_time" jdbcType="DATE" property="entry_time"></result>
+  <result column="card_No" jdbcType="VARCHAR" property="card_No"></result>
+  <result column="evaluate" jdbcType="VARCHAR" property="evaluate"></result>
+  <result column="position" jdbcType="VARCHAR" property="position"></result>
+  
+  <association property="department" javaType="com.util.pojo.Department">
+  <id column="id" jdbcType="INTEGER"  property="id"></id>
+  <result column="name" jdbcType="VARCHAR" property="name"></result>
+  <result column="describe" jdbcType="VARCHAR" property="describe"></result>
+  </association> 
+ </resultMap> -->
+
+	<select id="selectAll" resultType="com.util.pojo.Staff" >
+		SELECT * FROM Staff where 1=1 
+		<if test="name != null and name != ''">
+	     and name LIKE CONCAT('%',#{name},'%') 
+	    </if>
+	    <if test="code != null and code != ''">
+	     and code LIKE CONCAT('%',#{code},'%') 
+	    </if>
+	    
+	</select>
+	
+	<delete id="delete" >
+	delete from Staff where id=#{id}
+	</delete>
+	
+	<select id="chaId" resultType="com.util.pojo.Staff" >
+		SELECT * FROM Staff where id=#{id}
+	</select>
+	
+	<update id="update">
+	 update Staff set 
+	 name=#{name},code=#{code},phone=#{phone},address=#{address},
+	 sex=#{sex},`pid`=#{pid},`departmentID`=#{departmentID},`entry_time`=#{entry_time},
+	 `card_No`=#{card_No},`evaluate`=#{evaluate},`position`=#{position} where id=#{id}
+	</update>
+	
+	<insert id="StaffInsert" useGeneratedKeys="true">
+	insert Staff(name,code,phone,address,sex,`pid`,departmentID,entry_time,card_No,evaluate,position)
+	     value(#{name},#{code},#{phone},#{address},#{sex},#{pid},#{departmentID},#{entry_time},#{card_No},#{evaluate},#{position})
+	</insert>
+</mapper>

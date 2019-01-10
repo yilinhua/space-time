@@ -5,7 +5,7 @@
 	<select id="selectAll" resultType="com.util.pojo.CargoLocation" parameterType="string">
 		SELECT * FROM cargo_location where 1=1 
 		<if test="_parameter != null and _parameter != ''">
-	     and goodsname LIKE CONCAT('%',#{_parameter},'%') limit 0,1
+	     and goodsname LIKE CONCAT('%',#{_parameter},'%') 
 	    </if>
 	</select>
 	

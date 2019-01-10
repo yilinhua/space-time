@@ -182,7 +182,7 @@
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/order.html">货架管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">盘点管理</a></li>
+							href="check">盘点管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">移库管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
@@ -314,9 +314,11 @@
 						<li><b class="tip"></b><a target="Conframe"
 							href="cargo">货位资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">商品资料初装</a></li>
+							href="product">商品资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">客商资料初装</a></li>
+							href="merchants">客商资料初装</a></li>
+						<li><b class="tip"></b><a target="Conframe"
+							href="staff">人员资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">采购分析初装</a></li>
 					</ul>

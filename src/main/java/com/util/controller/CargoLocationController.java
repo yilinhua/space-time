@@ -35,7 +35,12 @@ public class CargoLocationController {
 		return "ziliao/cargo";
 	}
 
-	@RequestMapping("/delete")
+
+	
+
+	
+	@RequestMapping("/cargodelete")
+
 	@ResponseBody
 	public String delete(int id) {
 		if (cargo.delete(id) != 0) {
@@ -45,6 +50,7 @@ public class CargoLocationController {
 
 		return "0";
 	}
+
 
 	@RequestMapping("/ddd")
 	public String ggg() {
@@ -56,7 +62,6 @@ public class CargoLocationController {
 	@ResponseBody
 	public List<CargoLocation> cargos() {
 		List<CargoLocation> list = cargo.selectAll();
-
 		return list;
 	}
 
@@ -135,6 +140,31 @@ public class CargoLocationController {
 		}
 		return "redirect:/cargo";
 
+	}
+
+
+	@RequestMapping("/cargochaId")
+	public String chaId(Model model,int id){
+	    
+		CargoLocation ca = cargo.chaId(id);
+	    model.addAttribute("ca", ca);
+		model.addAttribute("update", "cargoupdate");
+		return "ziliao/update";
+	}
+	
+	@RequestMapping("/cargoupdate")
+	public String update(CargoLocation cargo){
+		
+		this.cargo.update(cargo);
+		
+		return "redirect:cargo";
+	}
+	
+	@RequestMapping("huoWeiInsert")
+	public String huoWeiInsert(CargoLocation cargo){
+
+		this.cargo.huoWeiInsert(cargo);
+		return "redirect:cargo";
 	}
 
 }

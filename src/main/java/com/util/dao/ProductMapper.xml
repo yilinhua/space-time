@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.util.dao.ProductMapper">
+<select id="selectAll" resultType="com.util.pojo.Product" parameterType="string">
+		SELECT * FROM product where 1=1 
+		<if test="name != null and name != ''">
+	     and trade_name LIKE CONCAT('%',#{name},'%') 
+	    </if>
+	    <if test="Drugs_type != null and Drugs_type != ''">
+	     and Drugs_type =#{Drugs_type}
+	    </if>
+	</select>
+	
+	<delete id="delete" >
+	delete from product where id=#{id}
+	</delete>
+	
+	<select id="chaId" resultType="com.util.pojo.Product" >
+		SELECT * FROM product where id=#{id}
+	</select>
+	
+	<update id="update">
+	 update product set 
+	 code=#{code},Company=#{company},Trade_name=#{trade_name},Specifications=#{specifications},
+	 Manufacturer=#{manufacturer},Approval_number=#{approval_number},Production_time=#{production_time}
+	 ,Expiration_date=#{expiration_date},Price=#{price},Qty=#{qty}
+	  where id=#{id}
+	</update>
+	
+	<insert id="productInsert" useGeneratedKeys="true">
+	insert product(code,Company,Trade_name,Specifications,Manufacturer,`Approval_number`,Production_time,Expiration_date,Price,Qty)
+	              value(#{code},#{company},#{trade_name},#{specifications},#{manufacturer},#{approval_number},#{production_time},#{expiration_date}
+	              ,#{price},#{qty})
+	</insert>
+</mapper>

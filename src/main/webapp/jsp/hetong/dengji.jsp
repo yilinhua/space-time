@@ -48,7 +48,6 @@
 		var firstPartyAddress = $("input[name='firstPartyAddress']").val(); //甲方地址
 		var partyBName = $("input[name='partyBName']").val(); //乙方法定人
 		var partyBAddress = $("input[name='partyBAddress']").val(); //乙方地址
-		var firstPartyName = $("input[name='firstPartyName']").val(); //乙方地址
 		var undertakerName = $("input[name='undertakerName']").val(); //承办人
 		var phone = $("input[name='phone']").val(); //电话
 		var feasorName = $("input[name='feasorName']").val(); //履行人姓名

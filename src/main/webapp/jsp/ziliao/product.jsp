@@ -55,13 +55,13 @@ $(document).ready(function(){
 
 function chaXun(){
  var name = $("#name").val();
- location="cargo?goodsName="+name;
+ location="product?TradeName="+name;
  
 }
 
 function shanChu(id){
  if(confirm("确认删除吗?")){
- $.get("cargodelete?id="+id,function(data){
+ $.get("productdelete?id="+id,function(data){
     
       if(data!=0){
         $("#id"+id).remove();
@@ -74,7 +74,7 @@ function shanChu(id){
 
 function update(id){
   
-  location="cargochaId?id="+id;
+  location="productchaId?id="+id;
 
 }
 </script>
@@ -82,20 +82,24 @@ function update(id){
 <body>
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<div class="alert alert-info">
-		当前位置<b class="tip"></b>资料初装<b class="tip"></b>货位资料初装
+		当前位置<b class="tip"></b>资料初装<b class="tip"></b>商品资料初装
 	</div>
-	货位查询:<input type="text" id="name" value="${goodsName}"><input type="button" value="查询"  onclick="chaXun()">
+	货位查询:<input type="text" id="name" value="${TradeName}"><input type="button" value="查询"  onclick="chaXun()">
 	<input type="button" value="新增" onclick="addUser()">
 	
 	<table class="tb" id="top">
 		<thead>
 			<tr>
-				<th>编号</th>
-				<th>货位名称</th>
-				<th>规格型号</th>
-				<th>基本单位</th>
-				<th>所属仓库</th>
-				<th>库位说明</th>
+				<th>商品编号</th>
+				<th>单位</th>
+				<th>商品名称</th>
+				<th>商品规格</th>
+				<th>生产厂家</th>
+				<th>批准文号</th>
+				<th>生产时间</th>
+				<th>过期时间</th>
+				<th>单价</th>
+				<th>数量</th>
 				<th>操作</th>
 			</tr>
 		</thead>
@@ -104,11 +108,15 @@ function update(id){
 			<c:forEach items="${list}" var="li">
 				<tr id="id${li.id}">
 				    <td>${li.code}</td>
-				    <td>${li.goodsname}</td>
-				    <td>${li.specification_type }</td> 
-				    <td>${li.basic_unit}</td>
-					<td>${li.warehouse}</td>
-					<td>${li.explain}</td>
+				    <td>${li.company}</td>
+				    <td>${li.trade_name }</td> 
+				    <td>${li.specifications}</td>
+					<td>${li.manufacturer}</td>
+					<td>${li.approval_number}</td>
+					<td>${li.production_time}</td>
+					<td>${li.expiration_date}</td>
+					<td>${li.price}</td>
+					<td>${li.qty}</td>
 					<td><a href="javascript:void(0)" onclick="update(${li.id})">修改</a> 
 					<a href="javascript:void(0)" onclick="shanChu(${li.id})">删除</a></td>
 				</tr>
@@ -118,7 +126,7 @@ function update(id){
 	</table>
     <div id="addUser" align="center"
 				style="font-weight: bold;background-color: #fff;height:500px;margin-top: 20px">
-				<form action="huoWeiInsert" method="post">
+				<form action="productInsert" method="post">
 					<table align="center">
 						<tr>
 							<td><br></td>
@@ -132,7 +140,7 @@ function update(id){
 						</tr>
 						
 						<tr>
-							<td>货位编号：</td>
+							<td>商品编号：</td>
 							<td><input type="text" class="form-control" name="code"></td>
 						</tr>
 						<tr>
@@ -140,47 +148,72 @@ function update(id){
 						</tr>
 						
 						<tr>
-							<td>货位名称：</td>
-							<td><input type="text" class="form-control" name="goodsname"></td>
+							<td>单位：</td>
+							<td><input type="text" class="form-control" name="company"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						<tr>
-							<td>规格型号：</td>
-							<td><input type="text" class="form-control" name="specification_type"></td>
+							<td>商品名称：</td>
+							<td><input type="text" class="form-control" name="trade_name"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						<tr>
-							<td>基本单位:</td>
-							<td><input type="text" class="form-control" name="basic_unit"></td>
-						</tr>
-						<tr>
-							<td><br></td>
-						</tr>
-						
-						<tr>
-							<td>所属仓库：</td>
-							<td><select class="form-control select2"
-								style="width: 100%;" name="warehouse">
-								
-										<option>总部仓库01</option>
-									<option>总部仓库02</option>
-							</select></td>
-						</tr>
-						<tr>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td>库位说明:</td>
-							<td><input type="text" class="form-control" name="explain"></td>
+							<td>商品规格:</td>
+							<td><input type="text" class="form-control" name="specifications"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						
+						<tr>
+							<td>生产厂家:</td>
+							<td><input type="text" class="form-control" name="manufacturer"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>批准文号:</td>
+							<td><input type="text" class="form-control" name="approval_number"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>生产时间:</td>
+							<td><input type="date" class="form-control" name="production_time"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>过期时间:</td>
+							<td><input type="date" class="form-control" name="expiration_date"></td>
+							
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+						
+						<tr>
+							<td>单价:</td>
+							<td><input type="text" class="form-control" name="price"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>数量:</td>
+							<td><input type="text" class="form-control" name="qty"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
 						<tr>
 							<td colspan="2"><input type="submit"
 								class="btn btn-block btn-outline-secondary" value="添加"></td>

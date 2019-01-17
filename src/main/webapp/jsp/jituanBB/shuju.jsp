@@ -58,7 +58,7 @@
 		</tr>
 		<tr>
 			<td align="center" class="tdl">仓储盘点</td>
-			<td align="center" class="tdl"><a href="/cargo"><input
+			<td align="center" class="tdl"><a href="/check"><input
 					type="button" value="选择"></a></td>
 		</tr>
 	</table>

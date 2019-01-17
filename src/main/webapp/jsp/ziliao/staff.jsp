@@ -55,13 +55,14 @@ $(document).ready(function(){
 
 function chaXun(){
  var name = $("#name").val();
- location="cargo?goodsName="+name;
+ var code = $("#code").val();
+ location="staff?name="+name+"&code="+code;
  
 }
 
 function shanChu(id){
  if(confirm("确认删除吗?")){
- $.get("cargodelete?id="+id,function(data){
+ $.get("staffdelete?id="+id,function(data){
     
       if(data!=0){
         $("#id"+id).remove();
@@ -74,7 +75,7 @@ function shanChu(id){
 
 function update(id){
   
-  location="cargochaId?id="+id;
+  location="staffchaId?id="+id;
 
 }
 </script>
@@ -84,18 +85,24 @@ function update(id){
 	<div class="alert alert-info">
 		当前位置<b class="tip"></b>资料初装<b class="tip"></b>货位资料初装
 	</div>
-	货位查询:<input type="text" id="name" value="${goodsName}"><input type="button" value="查询"  onclick="chaXun()">
+	姓名查找:<input type="text" id="name" value="${name}">
+	编号查找:<input type="text" id="code" value="${code}">
+	<input type="button" value="查询"  onclick="chaXun()">
 	<input type="button" value="新增" onclick="addUser()">
 	
 	<table class="tb" id="top">
 		<thead>
 			<tr>
+				<th>姓名</th>
 				<th>编号</th>
-				<th>货位名称</th>
-				<th>规格型号</th>
-				<th>基本单位</th>
-				<th>所属仓库</th>
-				<th>库位说明</th>
+				<th>电话</th>
+				<th>地址</th>
+				<th>性别</th>
+				<th>身份证</th>
+				<th>部门</th>
+				<th>入职时间</th>
+				<th>银行卡号</th>
+				<th>职位</th>
 				<th>操作</th>
 			</tr>
 		</thead>
@@ -103,12 +110,16 @@ function update(id){
 
 			<c:forEach items="${list}" var="li">
 				<tr id="id${li.id}">
+				    <td>${li.name}</td>
 				    <td>${li.code}</td>
-				    <td>${li.goodsname}</td>
-				    <td>${li.specification_type }</td> 
-				    <td>${li.basic_unit}</td>
-					<td>${li.warehouse}</td>
-					<td>${li.explain}</td>
+				    <td>${li.phone}</td> 
+				    <td>${li.address}</td>
+					<td>${li.sex}</td>
+					<td>${li.pid}</td>
+					<td>${li.departmentID}</td>
+					<td>${li.entry_time}</td>
+					<td>${li.card_No}</td>
+					<td>${li.position}</td>
 					<td><a href="javascript:void(0)" onclick="update(${li.id})">修改</a> 
 					<a href="javascript:void(0)" onclick="shanChu(${li.id})">删除</a></td>
 				</tr>
@@ -118,7 +129,7 @@ function update(id){
 	</table>
     <div id="addUser" align="center"
 				style="font-weight: bold;background-color: #fff;height:500px;margin-top: 20px">
-				<form action="huoWeiInsert" method="post">
+				<form action="staffInsert" method="post">
 					<table align="center">
 						<tr>
 							<td><br></td>
@@ -132,55 +143,78 @@ function update(id){
 						</tr>
 						
 						<tr>
-							<td>货位编号：</td>
+							<td>姓名：</td>
+							<td><input type="text" class="form-control" name="name"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>编号：</td>
 							<td><input type="text" class="form-control" name="code"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
-						
 						<tr>
-							<td>货位名称：</td>
-							<td><input type="text" class="form-control" name="goodsname"></td>
+							<td>电话：</td>
+							<td><input type="text" class="form-control" name="phone"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						<tr>
-							<td>规格型号：</td>
-							<td><input type="text" class="form-control" name="specification_type"></td>
+							<td>地址:</td>
+							<td><input type="text" class="form-control" name="address"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						<tr>
-							<td>基本单位:</td>
-							<td><input type="text" class="form-control" name="basic_unit"></td>
-						</tr>
-						<tr>
-							<td><br></td>
-						</tr>
-						
-						<tr>
-							<td>所属仓库：</td>
-							<td><select class="form-control select2"
-								style="width: 100%;" name="warehouse">
-								
-										<option>总部仓库01</option>
-									<option>总部仓库02</option>
-							</select></td>
-						</tr>
-						<tr>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td>库位说明:</td>
-							<td><input type="text" class="form-control" name="explain"></td>
+							<td>性别:</td>
+							<td><select name="sex"><option value="1">男</option><option value="0">女</option></select></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						
+						<tr>
+							<td>身份证:</td>
+							<td><input type="text" class="form-control" name="pid"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>部门:</td>
+							<td><select name="departmentID"><option value="1">人事部</option><option value="0">财务部</option></select></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>入职时间:</td>
+							<td><input type="date" class="form-control" name="entry_time"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>银行卡号:</td>
+							<td><input type="text" class="form-control" name="card_No"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>职位:</td>
+							<td><input type="text" class="form-control" name="position"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>			
 						<tr>
 							<td colspan="2"><input type="submit"
 								class="btn btn-block btn-outline-secondary" value="添加"></td>

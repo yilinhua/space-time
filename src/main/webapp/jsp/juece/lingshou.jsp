@@ -35,21 +35,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="alert alert-info">当前位置<b class="tip"></b>决策分析<b class="tip"></b>零售分析</div>
     <table class="tbform">
 		<tr>
-			<td align="center" class="tdl">人员分析</td>
+			<td align="center" class="tdl">销售分析</td>
 			<td align="center" class="tdl"><a href="jsp/juece/yuanrejuece.jsp"><input
 					type="button" value="选择"></a></td>
 		</tr>
 		<tr>
-			<td align="center" class="tdl">货物分析</td>
+			<td align="center" class="tdl">价格分析</td>
 			<td align="center" class="tdl"><a href="huowu"><input
 					type="button" value="选择"></a></td>
 		</tr>
-		<tr>
-			<td align="center" class="tdl">场地分析</td>
-			<td align="center" class="tdl"><a href="xiaoshou"><input
-					type="button" value="选择"></a></td>
-		</tr>
-		
 	</table>
   </body>
 </html>

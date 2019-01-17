@@ -83,10 +83,10 @@ function update(id){
 <body>
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<div class="alert alert-info">
-		当前位置<b class="tip"></b>资料初装<b class="tip"></b>货位资料初装
+		当前位置<b class="tip"></b>资料初装<b	 class="tip"></b>货位资料初装
 	</div>
-	姓名查找:<input type="text" id="name" value="${name}">
-	编号查找:<input type="text" id="code" value="${code}">
+	姓名查找:<input type="text" id="name" value="${staffname}">
+	编号查找:<input type="text" id="code" value="${staffcode}">
 	<input type="button" value="查询"  onclick="chaXun()">
 	<input type="button" value="新增" onclick="addUser()">
 	
@@ -102,7 +102,7 @@ function update(id){
 				<th>部门</th>
 				<th>入职时间</th>
 				<th>银行卡号</th>
-				<th>职位</th>
+				
 				<th>操作</th>
 			</tr>
 		</thead>
@@ -114,12 +114,19 @@ function update(id){
 				    <td>${li.code}</td>
 				    <td>${li.phone}</td> 
 				    <td>${li.address}</td>
-					<td>${li.sex}</td>
+					<td>
+					<c:if test="${li.sex==0}">
+					女
+					</c:if>
+					<c:if test="${li.sex==0}">
+					男
+					</c:if>
+					</td>
 					<td>${li.pid}</td>
 					<td>${li.departmentID}</td>
 					<td>${li.entry_time}</td>
 					<td>${li.card_No}</td>
-					<td>${li.position}</td>
+					
 					<td><a href="javascript:void(0)" onclick="update(${li.id})">修改</a> 
 					<a href="javascript:void(0)" onclick="shanChu(${li.id})">删除</a></td>
 				</tr>
@@ -127,6 +134,14 @@ function update(id){
 
 		</tbody>
 	</table>
+	<div align="center">
+	当前${yeMa}/${total}
+	<a href="staff?ye=1">首页</a>
+	<c:if test="${yeMa!=1}"><a href="staff?ye=${yeMa-1}">上一页</a></c:if>
+	<c:if test="${yeMa!=total}"><a href="staff?ye=${yeMa+1}">下一页</a></c:if>
+	<a href="staff?ye=${total}">末页</a>
+ 
+	</div>
     <div id="addUser" align="center"
 				style="font-weight: bold;background-color: #fff;height:500px;margin-top: 20px">
 				<form action="staffInsert" method="post">

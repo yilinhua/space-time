@@ -180,19 +180,13 @@
 					<a class="one">库存管理</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/order.html">货架管理</a></li>
+							href="shelves">货架管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="check">盘点管理</a></li>
+						
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">移库管理</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">损溢管理</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">拆装管理</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">暂存管理</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">饮片管理</a></li>
+							href="caustic">损溢管理</a></li>
+						
 					</ul>
 				</div>
 				<div>
@@ -321,7 +315,7 @@
 							href="staff">人员资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">采购分析初装</a></li>
-					</ul>
+					</ul>	
 				</div>
 				<div>
 					<a class="one">基础维护</a>

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+	<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -55,7 +55,8 @@ $(document).ready(function(){
 
 function chaXun(){
  var name = $("#name").val();
- location="merchants?name="+name;
+ var merchants_Type = $("#merchants_Type").val();
+ location="merchants?name="+name+"&merchants_Type="+merchants_Type;
  
 }
 
@@ -82,9 +83,14 @@ function update(id){
 <body>
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<div class="alert alert-info">
-		当前位置<b class="tip"></b>资料初装<b class="tip"></b>货位资料初装
+		当前位置<b class="tip"></b>资料初装<b class="tip"></b>客商资料初装
 	</div>
-	姓名查找:<input type="text" id="name" value="${name}">
+	姓名查找:<input type="text" id="name" value="${namea}">
+	类型查找:<select id="merchants_Type">
+	<option value="0">所有</option>
+							<option value="1">零售</option>
+							<option value="2">批发</option>
+							</select>
 	<input type="button" value="查询"  onclick="chaXun()">
 	<input type="button" value="新增" onclick="addUser()">
 	
@@ -109,7 +115,9 @@ function update(id){
 			<c:forEach items="${list}" var="li">
 				<tr id="id${li.id}">
 				    <td>${li.affiliated_Company}</td>
-				    <td>${li.merchants_Type}</td>
+				    <td><c:if test="${li.merchants_Type==1}">零售</c:if>
+				    <c:if test="${li.merchants_Type==2}">批发</c:if>
+				    </td>
 				    <td>${li.contact}</td> 
 				    <td>${li.mailbox}</td>
 					<td>${li.telephone}</td>
@@ -122,10 +130,17 @@ function update(id){
 					<a href="javascript:void(0)" onclick="shanChu(${li.id})">删除</a></td>
 				</tr>
 			</c:forEach>
-
 		</tbody>
-	</table>
-    <div id="addUser" align="center"
+	</table>  
+	<div align="center">
+	当前${yeMa}/${total}
+	<a href="merchants?ye=1">首页</a>
+	<c:if test="${yeMa!=1}"><a href="merchants?ye=${yeMa-1}">上一页</a></c:if>
+	<c:if test="${yeMa!=total}"><a href="merchants?ye=${yeMa+1}">下一页</a></c:if>
+	<a href="merchants?ye=${total}">末页</a>
+ 
+	</div>  
+	 <div id="addUser" align="center"
 				style="font-weight: bold;background-color: #fff;height:500px;margin-top: 20px">
 				<form action="merchantsInsert" method="post">
 					<table align="center">
@@ -150,7 +165,10 @@ function update(id){
 						
 						<tr>
 							<td>客商类型：</td>
-							<td><select name="merchants_Type"><option value="1">零售</option><option value="0">批发</option></select></td>
+							<td><select name="merchants_Type">
+							<option value="1">零售</option>
+							<option value="2">批发</option>
+							</select></td>
 						</tr>
 						<tr>
 							<td><br></td>

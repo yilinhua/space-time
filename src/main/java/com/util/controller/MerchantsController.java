@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageHelper;
@@ -19,18 +20,21 @@ public class MerchantsController {
 	MerchantsService merchants;
 
 	@RequestMapping("/merchants")
-	public String merchants(Model model, String name) {
+	public String merchants(Model model, String name,String merchants_Type,@RequestParam(defaultValue="0")int ye) {
        
-		PageHelper.startPage(0, 3);
 		
-		List<Merchants> list = merchants.selectAll(name);
+		PageHelper.startPage(ye, 5);
+		
+		List<Merchants> list = merchants.selectAll(name,merchants_Type);
         
         PageInfo<Merchants> pageinfo = new PageInfo<Merchants>(list);
         
 		model.addAttribute("list", pageinfo.getList());
-		
-		model.addAttribute("name", name);
-
+	
+		model.addAttribute("namea", name);
+		model.addAttribute("total", pageinfo.getTotal()%5==0?pageinfo.getTotal()/5:pageinfo.getTotal()/5	+1);
+		model.addAttribute("yeMa", pageinfo.getPageNum());
+        
 		return "ziliao/merchants";
 	}
 

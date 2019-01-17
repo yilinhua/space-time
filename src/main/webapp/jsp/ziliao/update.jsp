@@ -88,8 +88,8 @@
 						<td>所属仓库：</td>
 						<td><select class="form-control select2" style="width: 100%;" name="warehouse" >
 					
-								<option>总部仓库01</option>
-									<option>总部仓库02</option>
+								<option value="1">总部仓库01</option>
+									<option value="2">总部仓库02</option>	
 						</select></td>
 					</tr><tr>
 						<td><br></td>
@@ -183,18 +183,12 @@
 						<tr>
 							<tr>
 							<td>单价:</td>
-							<td><input type="text" class="form-control" name="price" value="#{pro.price}"></td>
+							<td><input type="text" class="form-control" name="price" value="${pro.price}"></td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
-						<tr>
-							<td>数量:</td>
-							<td><input type="text" class="form-control" name="qty" value="#{pro.qty}"></td>
-						</tr>
-						<tr>
-							<td><br></td>
-						</tr>
+						
 						
 					<tr>
 						<td><input type="submit"
@@ -206,6 +200,8 @@
 				</table>
 				</form>                           
 	</c:if>
+	
+	
 	 <c:if test="${update=='staffupdate'}">
 	<form action="staffupdate" method="post">
 				
@@ -318,7 +314,10 @@
 						
 						<tr>
 							<td>客商类型：</td>
-							<td><input type="text" class="form-control" name="merchants_Type" value="${merchants.merchants_Type}"></td>
+							<td><select name="merchants_Type">
+							<option value="1">零售</option>
+							<option value="2">批发</option>
+							</select></td>
 						</tr>
 						<tr>
 							<td><br></td>
@@ -381,6 +380,137 @@
 						<tr>
 							<td><br></td>
 						</tr>			
+					<tr>
+						<td><input type="submit"
+							class="btn btn-block btn-outline-secondary" value="保存"></td>
+						<td><input type="button" 
+							class="btn btn-block btn-outline-success" value="返回"
+							onclick="history.back()"></td>
+					</tr>
+				</table>
+				</form>                           
+	</c:if>
+	
+	 <c:if test="${update=='tijiao'}">
+	<form action="causticInsert" method="post">
+				
+				<table align="center">
+					<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>损溢类型：</td>
+							<td><input type="text" class="form-control" name="type"  value="1"></td>
+							<td><input type="hidden" name="id" value="${ca.id}"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>物品编号：</td>
+							<td><input type="text" class="form-control" name="shelves_number"  value="${ca.number}"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>报损时间：</td>
+							<td><input type="date" class="form-control" name="recording_time" ></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>报损人:</td>
+							<td><input type="text" class="form-control" name="Reported_loss_name" value="${ca.maintenance}"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>数量:</td>
+							<td><input type="text" class="form-control" name="number" value="1"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>原因:</td>
+							<td><input type="text" class="form-control" name="reason" ></td>
+						</tr>
+						
+						<tr>
+							<td><br></td>
+						</tr>
+								
+					<tr>
+						<td><input type="submit"
+							class="btn btn-block btn-outline-secondary" value="保存"></td>
+						<td><input type="button" 
+							class="btn btn-block btn-outline-success" value="返回"
+							onclick="history.back()"></td>
+					</tr>
+				</table>
+				</form>                           
+	</c:if>
+	<c:if test="${update=='shelvesUpdate'}">
+	<form action="shelvesupdate" method="post">
+				
+				<table align="center">
+					<tr>
+							<td><br></td>
+						</tr>
+						
+						
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>所属货位号：</td>
+							<td><input type="date" class="form-control" name="recording_time" ></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>货架编号:</td>
+							<td><input type="text" class="form-control" name="number" value="${ca.number}"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>货架状态:</td>
+							<td><select name="state">
+							<option value="1" >正常</option>
+							<option value="2" >损坏</option>
+					</select></td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						
+						<tr>
+							<td>货架位置:</td>
+							<td><input type="text" class="form-control" name="location" value="${ca.location}"></td>
+						</tr>
+						
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td>检修人:</td>
+							<td><input type="text" class="form-control" name="maintenance" value="${ca.maintenance}"></td>
+						</tr>
+						
+						<tr>
+							<td><br></td>
+						</tr>
 					<tr>
 						<td><input type="submit"
 							class="btn btn-block btn-outline-secondary" value="保存"></td>

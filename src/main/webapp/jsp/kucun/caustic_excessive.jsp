@@ -54,33 +54,14 @@
 	}
 
 	function chaXun() {
-		var check_type = $("#check_type").val();
-		var Drug_type = $("#Drug_type").val();
+		var type = $("#type").val();
+		var shelves_number = $("#shelves_number").val();
 		var start_time = $("#start_time").val();
 		var end_time = $("#end_time").val();
-		location = "check?check_type=" + check_type+"&Drug_type="+Drug_type+"&start_time="+start_time+"&end_time="+end_time;
+		location = "caustic?type=" + type+"&shelves_number="+shelves_number+"&start_time="+start_time+"&end_time="+end_time;
 
 	}
-	function fenlei() {
-		var name = $("[name=Drug_type]").val();
-		if (name == 0) {
-			$("#yao").html("");
-			$("#ys").html("");
-		} else {
-			$.get("fenlei?Drugs_type=" + name, function(data) {
-				$("#yao").html(data);
-				$("#ys").html("<td><br></td>");
-			});
-
-		}
-	}
-	function daochu(){
-	var check_type = $("#check_type").val();
-		var Drug_type = $("#Drug_type").val();
-		var start_time = $("#start_time").val();
-		var end_time = $("#end_time").val();
-		location = "Checkdaochu?check_type=" + check_type+"&Drug_type="+Drug_type+"&start_time="+start_time+"&end_time="+end_time;
-	}
+	
 </script>
 
 <body>
@@ -88,50 +69,47 @@
 	<div class="alert alert-info">
 		当前位置<b class="tip"></b>库存管理<b class="tip"></b>盘点管理
 	</div>
-	商品查询:
-	<input type="text" id="check_type" value="${check_type}">
+	编号查询:
+	<input type="text" id="shelves_number" value="${shelves_number}">
 	类型查询:
 	
-	<select id="Drug_type" onchange="fenlei()">
+	<select id="type" >
 							<option value="0" >所有</option>
-							<option value="1" <c:if test="${drug_type==1}">selected</c:if>>中药</option>
-							<option value="2" <c:if test="${drug_type==2}">selected</c:if>>西药</option>
+							<option value="1" <c:if test="${type==1}">selected</c:if>>货架</option>
+							<option value="2" <c:if test="${type==2}">selected</c:if>>药类</option>
 					</select>
 	日期查询:
 	<input type="date" id="start_time" value="${start_time}">到
 	<input type="date" id="end_time" value="${end_time}">
 	<input type="button" value="查询" onclick="chaXun()">
 	<input type="button" value="新增" onclick="addUser()">
-<a href="Checkdaochu"><input type="button"  value="导出数据" onclick="daochu()"></a>
+
 	<table class="tb" id="top">
 		<thead>
 			<tr>
-				<th>盘点时间</th>
-				<th>盘点商品</th>
-				<th>盘点人</th>
-				<th>实际库存</th>
-				<th>系统库存</th>
-				<th>单价</th>
-				<th>规格</th>
-				<th>盘点类型</th>
+				<th>资产编号</th>
+				<th>报损时间</th>
+				<th>资产类型</th>
+				
+				<th>报损人</th>
+				<th>数量</th>
+				<th>原因</th>
 			</tr>
 		</thead>
 		<tbody>
 
 			<c:forEach items="${list}" var="li">
 				<tr id="id${li.id}">
-					<td>${li.check_time}</td>
-					<td><c:if test="${li.check_type=='0'}">所有商品</c:if>
-					    <c:if test="${li.check_type!='0'}">${li.check_type}</c:if>
+				    <td>${li.shelves_number}</td>
+					<td>${li.recording_time}</td>
+					<td><c:if test="${li.type=='1'}">货架</c:if>
+					    <c:if test="${li.type=='2'}">药品</c:if>
 					</td>
-					<td>${li.check_name }</td>
-					<td>${li.practical_repertory}</td>
-					<td>${li.system_repertory}</td>
-					<td>${li.price}</td>
-					<td>${li.specification}</td>
-					<td><c:if test="${li.drug_type==0}">所有</c:if> <c:if
-							test="${li.drug_type==1}">中药</c:if> <c:if
-							test="${li.drug_type==2}">西药</c:if></td>
+					
+					<td>${li.reported_loss_name}</td>
+					<td>${li.number}</td>
+					<td>${li.reason}</td>
+					
 				</tr>
 			</c:forEach>
 
@@ -139,10 +117,10 @@
 	</table>
 	<div align="center">
 	当前${yeMa}/${total}
-	<a href="check?ye=1">首页</a>
-	<c:if test="${yeMa!=1}"><a href="check?ye=${yeMa-1}">上一页</a></c:if>
-	<c:if test="${yeMa!=total}"><a href="check?ye=${yeMa+1}">下一页</a></c:if>
-	<a href="check?ye=${total}">末页</a>
+	<a href="caustic_excessive?ye=1">首页</a>
+	<c:if test="${yeMa!=1}"><a href="caustic_excessive?ye=${yeMa-1}">上一页</a></c:if>
+	<c:if test="${yeMa!=total}"><a href="caustic_excessive?ye=${yeMa+1}">下一页</a></c:if>
+	<a href="caustic_excessive?ye=${total}">末页</a>
  
 	</div> 
 	

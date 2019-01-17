@@ -6,7 +6,7 @@ public class CargoLocation {
   private String specification_type;
   private String basic_unit;
   private String goodsname ;
-  private String warehouse ;
+  private int warehouse ;
   private String explain ;
 public int getId() {
 	return id;
@@ -26,9 +26,7 @@ public String getGoodsname() {
 public void setGoodsname(String goodsname) {
 	this.goodsname = goodsname;
 }
-public String getWarehouse() {
-	return warehouse;
-}
+
 public String getSpecification_type() {
 	return specification_type;
 }
@@ -42,14 +40,18 @@ public String getBasic_unit() {
 public void setBasic_unit(String basic_unit) {
 	this.basic_unit = basic_unit;
 }
-public void setWarehouse(String warehouse) {
-	this.warehouse = warehouse;
-}
+
 public String getExplain() {
 	return explain;
 }
 public void setExplain(String explain) {
 	this.explain = explain;
+}
+public int getWarehouse() {
+	return warehouse;
+}
+public void setWarehouse(int warehouse) {
+	this.warehouse = warehouse;
 }
 
     

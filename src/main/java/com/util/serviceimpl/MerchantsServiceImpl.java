@@ -18,9 +18,9 @@ public class MerchantsServiceImpl implements MerchantsService{
 	MerchantsMapper mapper;
 	
 	
-	public List<Merchants> selectAll(String name) {
+	public List<Merchants> selectAll(String name,String merchants_Type) {
 		// TODO Auto-generated method stub
-		return mapper.selectAll(name);
+		return mapper.selectAll(name,merchants_Type);
 	}
 
 	@Override

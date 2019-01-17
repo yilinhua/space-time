@@ -15,4 +15,21 @@ pagehelper:
  reasonable: true
  supportMethodsArguments: true
  params: count=countSql
+ 
+ shiro:
+   session:
+      #shiro session超时 设置 20分钟
+       globalSessionTimeout: 1200000
+   shiroFilter:
+      #shiro权限分配
+       loginUrl: /tologin
+       successUrl: /mian
+       unauthorizedUrl: /login
+     #  filterChainDefinitionMap: {
+     #  /bakmain: 'roles[superadmin]',
+      # /tologin: logout,
+       #/dologin: anon,
+      # /login: anon,
+      # /main: anon,
+      # /**: authc}
       

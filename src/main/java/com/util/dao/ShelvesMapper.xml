@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.util.dao.ShelvesMapper">
+	<select id="selectAll" resultType="com.util.pojo.Shelves" >
+		SELECT * FROM shelves where 1=1 
+		<if test="number!=null and number!=''">
+		 and number=#{number}
+		</if>
+		<if test="type!=0">
+		 and type=#{type}
+		</if>
+		<if test="state!=0">
+		 and state=#{state}
+		</if>
+	</select>
+	
+	<delete id="delete" >
+	delete from shelves where id=#{id}
+	</delete>
+	
+	<select id="chaId" resultType="com.util.pojo.Shelves" >
+		SELECT * FROM shelves where id=#{id}
+	</select>
+	
+	<update id="update">
+	 update shelves set 
+	 type=#{type},cargo_location_id=#{cargo_location_id},name=#{name},state=#{state},
+	 location=#{location},`maintenance`=#{maintenance} where id=#{id}
+	</update>
+	
+	<insert id="shelvesInsert" useGeneratedKeys="true">
+	insert shelves(type,cargo_location_id,state,number,location,`maintenance`)
+	              value(#{type},#{cargo_location_id},#{state},#{number},#{location},#{maintenance})
+	</insert>
+</mapper>

@@ -84,7 +84,7 @@ function update(id){
 	<div class="alert alert-info">
 		当前位置<b class="tip"></b>资料初装<b class="tip"></b>商品资料初装
 	</div>
-	货位查询:<input type="text" id="name" value="${TradeName}"><input type="button" value="查询"  onclick="chaXun()">
+	商品查询:<input type="text" id="name" value="${TradeName}"><input type="button" value="查询"  onclick="chaXun()">
 	<input type="button" value="新增" onclick="addUser()">
 	
 	<table class="tb" id="top">
@@ -98,8 +98,8 @@ function update(id){
 				<th>批准文号</th>
 				<th>生产时间</th>
 				<th>过期时间</th>
-				<th>单价</th>
-				<th>数量</th>
+					
+	
 				<th>操作</th>
 			</tr>
 		</thead>
@@ -115,8 +115,8 @@ function update(id){
 					<td>${li.approval_number}</td>
 					<td>${li.production_time}</td>
 					<td>${li.expiration_date}</td>
-					<td>${li.price}</td>
-					<td>${li.qty}</td>
+					
+					
 					<td><a href="javascript:void(0)" onclick="update(${li.id})">修改</a> 
 					<a href="javascript:void(0)" onclick="shanChu(${li.id})">删除</a></td>
 				</tr>
@@ -124,6 +124,15 @@ function update(id){
 
 		</tbody>
 	</table>
+	
+	<div align="center">
+	当前${yeMa}/${total}
+	<a href="product?ye=1&TradeName=${TradeName}">首页</a>
+	<c:if test="${yeMa!=1}"><a href="product?ye=${yeMa-1}&TradeName=${TradeName}">上一页</a></c:if>
+	<c:if test="${yeMa!=total}"><a href="product?ye=${yeMa+1}&TradeName=${TradeName}">下一页</a></c:if>
+	<a href="product?ye=${total}&TradeName=${TradeName}">末页</a>
+ 
+	</div>  
     <div id="addUser" align="center"
 				style="font-weight: bold;background-color: #fff;height:500px;margin-top: 20px">
 				<form action="productInsert" method="post">
@@ -207,13 +216,7 @@ function update(id){
 						<tr>
 							<td><br></td>
 						</tr>
-						<tr>
-							<td>数量:</td>
-							<td><input type="text" class="form-control" name="qty"></td>
-						</tr>
-						<tr>
-							<td><br></td>
-						</tr>
+						
 						<tr>
 							<td colspan="2"><input type="submit"
 								class="btn btn-block btn-outline-secondary" value="添加"></td>

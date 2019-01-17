@@ -7,9 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.util.pojo.CargoLocation;
+import com.util.pojo.Merchants;
 import com.util.service.CargoLocationService;
 
 @Controller
@@ -19,11 +23,14 @@ public class CargoLocationController {
 	CargoLocationService cargo;
 	
 	@RequestMapping("/cargo")
-	public String cargo(Model model,String goodsName){
-		
+	public String cargo(Model model,String goodsName,@RequestParam(defaultValue="0")int ye){
+		PageHelper.startPage(ye, 3);
 		List<CargoLocation> list = cargo.selectAll(goodsName);
+		PageInfo<CargoLocation> pageinfo = new PageInfo<CargoLocation>(list);
 		model.addAttribute("list", list);
 		model.addAttribute("goodsName", goodsName);
+		model.addAttribute("total", pageinfo.getTotal()%3==0?pageinfo.getTotal()/3:pageinfo.getTotal()/3+1);
+		model.addAttribute("yeMa", pageinfo.getPageNum());
 		return "ziliao/cargo";
 	}
 	

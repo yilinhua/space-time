@@ -4,8 +4,11 @@
 <mapper namespace="com.util.dao.MerchantsMapper">
 	<select id="selectAll" resultType="com.util.pojo.Merchants" parameterType="string">
 		SELECT * FROM merchants where 1=1 
-		<if test="_parameter != null and _parameter != ''">
-	     and affiliated_Company LIKE CONCAT('%',#{_parameter},'%')
+		<if test="name != null and name != ''">
+	     and contact LIKE CONCAT('%',#{name},'%')  
+	    </if>
+	    <if test="merchants_Type != null and merchants_Type != 0">
+	     and merchants_Type =#{merchants_Type}
 	    </if>
 	</select>
 	

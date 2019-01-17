@@ -91,11 +91,11 @@ function update(id){
 		<thead>
 			<tr>
 				<th>编号</th>
-				<th>货位名称</th>
+				<th>货位区域</th>
 				<th>规格型号</th>
 				<th>基本单位</th>
 				<th>所属仓库</th>
-				<th>库位说明</th>
+				<th>货位说明</th>
 				<th>操作</th>
 			</tr>
 		</thead>
@@ -107,7 +107,12 @@ function update(id){
 				    <td>${li.goodsname}</td>
 				    <td>${li.specification_type }</td> 
 				    <td>${li.basic_unit}</td>
-					<td>${li.warehouse}</td>
+					<td>
+					
+					<c:if test="${li.warehouse==1}">A仓库</c:if>
+					<c:if test="${li.warehouse==2}">B仓库</c:if>
+					<c:if test="${li.warehouse==3}">C仓库</c:if>
+					</td>
 					<td>${li.explain}</td>
 					<td><a href="javascript:void(0)" onclick="update(${li.id})">修改</a> 
 					<a href="javascript:void(0)" onclick="shanChu(${li.id})">删除</a></td>
@@ -116,6 +121,15 @@ function update(id){
 
 		</tbody>
 	</table>
+	<div align="center">
+	当前${yeMa}/${total}
+	<a href="cargo?ye=1">首页</a>
+	<c:if test="${yeMa!=1}"><a href="cargo?ye=${yeMa-1}">上一页</a></c:if>
+	<c:if test="${yeMa!=total}"><a href="cargo?ye=${yeMa+1}">下一页</a></c:if>
+	<a href="cargo?ye=${total}">末页</a>
+ 
+	</div>  
+ 
     <div id="addUser" align="center"
 				style="font-weight: bold;background-color: #fff;height:500px;margin-top: 20px">
 				<form action="huoWeiInsert" method="post">
@@ -166,8 +180,8 @@ function update(id){
 							<td><select class="form-control select2"
 								style="width: 100%;" name="warehouse">
 								
-										<option>总部仓库01</option>
-									<option>总部仓库02</option>
+										<option value="1">总部仓库01</option>
+									<option value="2">总部仓库02</option>
 							</select></td>
 						</tr>
 						<tr>

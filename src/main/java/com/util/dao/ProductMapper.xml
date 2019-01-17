@@ -6,7 +6,7 @@
 		SELECT * FROM product where 1=1 
 		<if test="name != null and name != ''">
 	     and trade_name LIKE CONCAT('%',#{name},'%') 
-	    </if>
+	    </if>	
 	    <if test="Drugs_type != null and Drugs_type != ''">
 	     and Drugs_type =#{Drugs_type}
 	    </if>

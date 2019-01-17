@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.util.pojo.Merchants;
 import com.util.pojo.Staff;
 import com.util.service.StaffService;
 
@@ -17,14 +21,16 @@ public class StaffController {
 	StaffService staff;
 	
 	@RequestMapping("/staff")
-	public String staff(Model model,String name,String code){
-		
+	public String staff(Model model,String name,String code,@RequestParam(defaultValue="0")int ye){
+		PageHelper.startPage(ye, 3);
 		List<Staff> list = staff.selectAll(name,code);
-		
+		PageInfo<Staff> pageinfo = new PageInfo<Staff>(list);
 		                    
 		model.addAttribute("list", list);
-		model.addAttribute("name", name);
-		model.addAttribute("code", code);
+		model.addAttribute("staffname", name);
+		model.addAttribute("staffcode", code);
+		model.addAttribute("total", pageinfo.getTotal()%3==0?pageinfo.getTotal()/3:pageinfo.getTotal()/3+1);
+		model.addAttribute("yeMa", pageinfo.getPageNum());
 		return "ziliao/staff";
 	}
 	

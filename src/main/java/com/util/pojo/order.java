@@ -1,6 +1,8 @@
 package com.util.pojo;
 
-import com.mysql.fabric.xmlrpc.base.Data;
+import java.sql.Date;
+
+
 
 public class order {
 	private int id;
@@ -30,6 +32,7 @@ public class order {
 	public void setTotalSum(double totalSum) {
 		this.totalSum = totalSum;
 	}
+
 	
 	public String getAddress() {
 		return address;

@@ -132,7 +132,7 @@
 							</li>
 							
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/Maintain-edit.html">开票管理</a></li>
+							href="select">开票管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="selectLists">入库管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"

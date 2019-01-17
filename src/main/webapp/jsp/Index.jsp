@@ -32,7 +32,6 @@
 							<li><a target="Conframe" href="Template/find-form.html">合同登记</a></li>
 							<li><a target="Conframe" href="Template/find-alert.html">审核</a></li>
 							<li><a target="Conframe" href="Template/find-order.html">查询</a></li>
-							<li><a target="Conframe" href="Template/find-1.html">文档管理</a></li>
 							<li><a target="Conframe" href="Template/find-2.html">统计报表</a></li>
 							<li><a target="Conframe" href="Template/find-3.html">执行情况</a></li>
 						</ul></li>
@@ -120,8 +119,6 @@
 						<li><b class="tip"></b><a target="Conframe"
 							href="/hetong/shenhe.html">审核</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="hetong/wendang.jsp">文档管理</a></li>
-						<li><b class="tip"></b><a target="Conframe"
 							href="/hetong/tongji.html">生成报表</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="/hetong/zhix.html">执行情况</a></li>
@@ -169,11 +166,11 @@
 					<a class="one">集团报表</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="jituanBB/shuju.jsp">数据查询</a></li>
+							href="jsp/jituanBB/shuju.jsp">数据查询</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="jituanBB/baobiao.jsp">报表</a></li>
+							href="jsp/jituanBB/baobiao.jsp">报表</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="jituanBB/fenxi.jsp">统计分析</a></li>
+							href="jsp/jituanBB/fenxi.jsp">统计分析</a></li>
 					</ul>
 				</div>
 				<div>
@@ -182,7 +179,7 @@
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/order.html">货架管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">盘点管理</a></li>
+							href="check">盘点管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">移库管理</a></li>
 						<li><b class="tip"></b><a target="Conframe"
@@ -197,7 +194,7 @@
 				</div>
 				<div>
 					<a class="one">批发管理</a>
-					<ul class="kid">
+					<ul class ="kid">
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/order.html">订单管理</a>
 							</li>
@@ -295,17 +292,14 @@
 					<a class="one">决策分析</a>
 					<ul class="kid">
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/lingshou.jsp">零售分析</a></li>
+							href="jsp/juece/lingshou.jsp">零售分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/pifa.jsp">批发分析</a></li>
+							href="jsp/juece/pifa.jsp">批发分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/kucun.jsp">库存分析</a></li>
+							href="jsp/juece/kucun.jsp">库存分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="juece/caigou.jsp">采购分析</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="juece/liansuo.jsp">连锁分析</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="juece/yingshou.jsp">应收应付分析</a></li>
+							href="jsp/juece/caigou.jsp">采购分析</a></li>
+						
 					</ul>
 				</div>
 				<div>
@@ -314,9 +308,11 @@
 						<li><b class="tip"></b><a target="Conframe"
 							href="cargo">货位资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">商品资料初装</a></li>
+							href="product">商品资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
-							href="Template/formstyle.html">客商资料初装</a></li>
+							href="merchants">客商资料初装</a></li>
+						<li><b class="tip"></b><a target="Conframe"
+							href="staff">人员资料初装</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="Template/formstyle.html">采购分析初装</a></li>
 					</ul>

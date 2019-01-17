@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.util.dao.CheckMapper">
+	<select id="selectAll" resultType="com.util.pojo.Check">
+		SELECT * FROM `check` where 1=1
+		<if test="check_type != null and check_type != ''">
+			and check_type like concat('%',#{check_type},'%')
+		</if>
+
+		<if test="Drug_type != null and Drug_type != 0">
+			and Drug_type=#{Drug_type}
+		</if>
+
+		<if test="start_time != null and start_time != ''  ">
+			and check_time &gt;=#{start_time}
+		</if>
+		<if test=" end_time != null and end_time != '' ">
+			and check_time &lt;=#{end_time}
+		</if>
+
+	</select>
+
+	<select id="list" resultType="com.util.pojo.Check">
+		select * from `check`
+	</select>
+
+
+
+	<insert id="checkInsert" useGeneratedKeys="true">
+		insert
+		`check`(check_time,check_type,check_name,practical_repertory,system_repertory,`price`,Qty,specification,Drug_type)
+		value(#{check_time},#{check_type},#{check_name},#{practical_repertory},#{system_repertory},#{price},#{qty},#{specification},#{drug_type})
+	</insert>
+</mapper>

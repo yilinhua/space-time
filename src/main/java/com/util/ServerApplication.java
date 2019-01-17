@@ -1,6 +1,7 @@
 package com.util;
 
 
+
 /**
  *作者:zzq
  *时间:11点27分
@@ -13,7 +14,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.util.*")
-
 public class ServerApplication {
 	public static void main(String[] args) {
         SpringApplication.run(ServerApplication.class, args);

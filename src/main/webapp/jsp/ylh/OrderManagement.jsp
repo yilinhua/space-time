@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -48,8 +49,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <td>${list.userName}</td>
    <td>${list.tradeName}</td>
    <td>${list.number}</td>
-   <td>${list.totalSum}</td>
-   <td>${list.ordertime}</td>
+   <td>${list.totalSum}</td>  
+   <td><fmt:formatDate value="${list.ordertime}"/> </td>
    <td>${list.address}</td>
    <td></td>
    </tr>

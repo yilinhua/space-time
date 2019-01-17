@@ -18,19 +18,23 @@ public class CargoLocationServiceimpl implements CargoLocationService {
 	@Autowired
 	private CargoLocationMapper CargoLocation;
 
-
 	@Override
-	public List<CargoLocation> selectAll(String  goodsName) {
+	public List<CargoLocation> selectAlls(String goodsName) {
 		// TODO Auto-generated method stub
 
-		return CargoLocation.selectAll(goodsName);
+		return CargoLocation.selectAlls(goodsName);
 	}
-
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
 		return CargoLocation.delete(id);
+	}
+
+	@Override
+	public List<CargoLocation> selectAll() {
+		// TODO Auto-generated method stub
+		return CargoLocation.selectAll();
 }
 
 

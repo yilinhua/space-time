@@ -8,6 +8,14 @@ public class CargoLocation {
   private String goodsname ;
   private int warehouse ;
   private String explain ;
+  private int warehouses;
+  
+public int getWarehouses() {
+	return warehouses;
+}
+public void setWarehouses(int warehouses) {
+	this.warehouses = warehouses;
+}
 public int getId() {
 	return id;
 }

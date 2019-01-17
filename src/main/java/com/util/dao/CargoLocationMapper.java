@@ -6,13 +6,15 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.util.pojo.CargoLocation;
 
-
-
 @Mapper
 public interface CargoLocationMapper {
-	List<CargoLocation> selectAll(String  name);
-	
+	List<CargoLocation> selectAlls(String name);
+
 	int delete(int id);
+
+
+	List<CargoLocation> selectAll();
+
 	
 	CargoLocation chaId(int id);
 	

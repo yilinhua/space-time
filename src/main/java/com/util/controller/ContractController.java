@@ -29,7 +29,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.util.pojo.Check;
 import com.util.pojo.Contract;
+import com.util.service.CheckService;
 import com.util.service.ContractService;
 
 @Controller
@@ -37,6 +39,7 @@ public class ContractController {
 
 	@Autowired
 	private ContractService contractService;
+	private CheckService Checkservice;
 
 	@RequestMapping("/hetong/selectAll.html")
 	public String selectAll1(Model model, Contract contract) {
@@ -59,6 +62,12 @@ public class ContractController {
 			return "redirect:/hetong/selectAll.html";
 		}
 		return "";
+
+	}
+
+	@RequestMapping("/test")
+	public String te() {
+		return "/jituanBB/test";
 
 	}
 
@@ -104,8 +113,8 @@ public class ContractController {
 	}
 
 	@RequestMapping("/exec")
-	public String exec(Contract contract, String name,int contractType,int contractStates) {
-		
+	public String exec(Contract contract, String name, int contractType, int contractStates) {
+
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		HSSFSheet sheet = workbook.createSheet("合同信息");
 		contract.setContractType(contractType);
@@ -186,12 +195,14 @@ public class ContractController {
 		}
 		try {
 			FileOutputStream fos = new FileOutputStream("D:/" + name + ".xls");
-			
+
 			workbook.write(fos);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return "redirect:/hetong/tongji.html";
 	}
+
+	
 
 }

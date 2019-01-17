@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="../Styles/ui-lightness/jquery-ui-1.8.22.custom.css" />
   <body>
   
-  <form action="selectList" method="post">
+  <form action="selectLists" method="post">
     <table border="1" cellspacing="0" class="tb" id="top">
     <thead>
     <tr>

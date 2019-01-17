@@ -9,13 +9,18 @@ import com.util.pojo.CargoLocation;
 
 public interface CargoLocationService {
 
-	List<CargoLocation> selectAll(String  goodsName);
+	List<CargoLocation> selectAlls(String  goodsName);
 	
 	int delete(int id);
+
+
+	List<CargoLocation> selectAll();
+
 	
 	CargoLocation chaId(int id);
 	
 	int update(CargoLocation cargo);
 	
 	int huoWeiInsert(CargoLocation cargo);
+
 }

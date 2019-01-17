@@ -13,8 +13,6 @@
 
 	</properties>
 
-
-
 	<!-- 添加Spring Boot的父类依赖，这样当前项目就是Spring Boot项目了。spring-boot-starter-parent是一个特殊的starter，他用来提供相关的maven默认依赖，使用它之后，常用的依赖可以省去version标签 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -45,8 +43,8 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
 		</dependency>
-		
 
+		
 
 		<!--添加对test支持 -->
 		<dependency>
@@ -72,7 +70,6 @@
 		</dependency>
 
 
-
   <dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
@@ -90,7 +87,6 @@
 			<artifactId>shiro-web</artifactId>
 			<version>1.4.0</version>
 		</dependency> 
-
 
 
 		<dependency>
@@ -117,12 +113,6 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.1</version>
 		</dependency>
-
-
-
-
-
-
 
 			<!-- poi-->
 		    <dependency>
@@ -175,13 +165,6 @@
 		      <artifactId>poi</artifactId>
 		      <version>3.17</version>
 		    </dependency>
-
-
-
-
-
-
-
 
 		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
 			<version>3.17</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 

@@ -295,8 +295,8 @@
 							href="jsp/juece/lingshou.jsp">零售分析</a></li>
 						<li><b class="tip"></b><a target="Conframe"
 							href="jsp/juece/pifa.jsp">批发分析</a></li>
-						<li><b class="tip"></b><a target="Conframe"
-							href="jsp/juece/kucun.jsp">库存分析</a></li>
+						<!-- <li><b class="tip"></b><a target="Conframe"
+							href="jsp/juece/kucun.jsp">库存分析</a></li> -->
 						<li><b class="tip"></b><a target="Conframe"
 							href="jsp/juece/caigou.jsp">采购分析</a></li>
 						

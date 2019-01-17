@@ -80,6 +80,8 @@ public class OrderManagementController {
 			cell.setCellValue(list.get(i).getNumber());
 			cell = row.createCell(3);
 			cell.setCellValue(list.get(i).getTotalSum());
+			cell = row.createCell(4);
+			cell.setCellValue(list.get(i).getOrdertime());
 			/*
 			 * cell=row.createCell(4); cell.setCellStyle(cellStyle);
 			 */
@@ -115,15 +117,15 @@ public class OrderManagementController {
 
 	@RequestMapping("/chukuDao")
 	public String chu() {
-		HSSFWorkbook workbook = new HSSFWorkbook();
+		HSSFWorkbook workbook = new HSSFWorkbook(); //创建excel文档对象
 		HSSFSheet sheet = workbook.createSheet("出库记录");
 		HSSFDateUtil hssg = new HSSFDateUtil();
 		// 起始行，起始列，结束行，结束列
 		/* sheet.addMergedRegion(new CellRangeAddress(0,0,0,1)); */
 		/* sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 1)); */
-		HSSFRow row = sheet.createRow(0);
+		HSSFRow row = sheet.createRow(0); //创建excel行 
 		List<order> list = orderManagementService.selectList();
-		HSSFCell cell = null;
+		HSSFCell cell = null;   //创建单元格
 		cell = row.createCell(0);
 		cell.setCellValue("批发商");
 		cell = row.createCell(1);
@@ -154,6 +156,8 @@ public class OrderManagementController {
 			cell.setCellValue(list.get(i).getNumber());
 			cell = row.createCell(3);
 			cell.setCellValue(list.get(i).getTotalSum());
+			cell = row.createCell(4);
+			cell.setCellValue(list.get(i).getOrdertime());
 			/*
 			 * cell=row.createCell(4); cell.setCellStyle(cellStyle);
 			 */

@@ -41,13 +41,13 @@
 	</div>
 	<table class="tbform">
 		<tr>
-			<td align="center" class="tdl">批发商分析</td>
-			<td align="center" class="tdl"><a href="wholesaler"><input
+			<td align="center" class="tdl">销售分析</td>
+			<td align="center" class="tdl"><a href="pf"><input
 					type="button" value="选择"></a></td>
 		</tr>
 		<tr>
-			<td align="center" class="tdl">零售分析</td>
-			<td align="center" class="tdl"><a href="retail"><input
+			<td align="center" class="tdl">价格分析</td>
+			<td align="center" class="tdl"><a href="pfjg"><input
 					type="button" value="选择"></a></td>
 		</tr>
 

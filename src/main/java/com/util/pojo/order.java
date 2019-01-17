@@ -4,11 +4,11 @@ import com.mysql.fabric.xmlrpc.base.Data;
 
 public class order {
 	private int id;
-	private int userName;
-	private int tradeName;
+	private String userName;
+	private String tradeName;
 	private int number;
 	private double totalSum;
-	private Data ordertime;
+	private String ordertime;
 	private String address;
 	public int getId() {
 		return id;
@@ -16,18 +16,8 @@ public class order {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getUserName() {
-		return userName;
-	}
-	public void setUserName(int userName) {
-		this.userName = userName;
-	}
-	public int getTradeName() {
-		return tradeName;
-	}
-	public void setTradeName(int tradeName) {
-		this.tradeName = tradeName;
-	}
+	
+	
 	public int getNumber() {
 		return number;
 	}
@@ -40,17 +30,30 @@ public class order {
 	public void setTotalSum(double totalSum) {
 		this.totalSum = totalSum;
 	}
-	public Data getOrdertime() {
-		return ordertime;
-	}
-	public void setOrdertime(Data ordertime) {
-		this.ordertime = ordertime;
-	}
+	
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getTradeName() {
+		return tradeName;
+	}
+	public void setTradeName(String tradeName) {
+		this.tradeName = tradeName;
+	}
+	public String getOrdertime() {
+		return ordertime;
+	}
+	public void setOrdertime(String ordertime) {
+		this.ordertime = ordertime;
 	}
 	
 	

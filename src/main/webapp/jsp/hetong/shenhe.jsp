@@ -88,7 +88,7 @@
 						<th>${list.approvalNumber}</th>
 						<th ><a href="/hetong/sh?id=${list.id}"><input
 								type="button" value="审核"></a>
-								<a href="/hetong/sh?id=${list.id}"><input
+								<a href="hetong/shenhe.html"><input
 								type="button" value="不通过"></a>
 								</th>
 					</tr>

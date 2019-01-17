@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Warehousing {
 	private int id;
-	private Date date;
+	private String date;
 	private String drugname;
 	private int number;
 	private String warehousename;
@@ -16,10 +16,11 @@ public class Warehousing {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getDate() {
+	
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getDrugname() {

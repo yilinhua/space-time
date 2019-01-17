@@ -46,11 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<td align="center" class="tdl"><a href="/ddd"><input
 					type="button" value="选择"></a></td>
 		</tr>
-		<tr>
-			<td align="center" class="tdl">盘点分析</td>
-			<td align="center" class="tdl"><a href="/pandianDao"><input
-					type="button" value="选择"></a></td>
-		</tr>
+		
 	</table>
   </body>
 </html>
